@@ -51,14 +51,35 @@
   .partner-note a:hover{color:var(--steel)}
 
   /* NUMERI */
-  .svc-kpi{display:flex;justify-content:center;flex-wrap:wrap;gap:0;max-width:900px;margin:0 auto}
-  .svc-kpi .kpi__item{padding:8px 30px;border-left:1px solid var(--silver-2);text-align:center}
+  .svc-kpi{display:flex;justify-content:center;flex-wrap:wrap;gap:28px 0;max-width:960px;margin:0 auto}
+  .svc-kpi .kpi__item{padding:8px 26px;border-left:1px solid var(--silver-2);text-align:center;flex:1 1 160px}
   .svc-kpi .kpi__item:first-child{border-left:0}
-  .svc-kpi .kpi__num{font-family:var(--serif);font-weight:600;font-size:clamp(2.6rem,5vw,3.8rem);color:var(--navy-deep);line-height:1}
+  .svc-kpi .kpi__num{font-family:var(--serif);font-weight:600;font-size:clamp(2.2rem,4.2vw,3.2rem);color:var(--navy-deep);line-height:1}
+  .svc-kpi .kpi__num--pending{font-size:1rem;font-style:italic;font-weight:500;color:var(--silver-accent);opacity:.9}
   .svc-kpi .kpi__label{margin-top:12px;font-size:.85rem;color:var(--steel);line-height:1.4}
   .svc-kpi .kpi__note{margin-top:36px;text-align:center;font-size:.78rem;letter-spacing:.02em;color:var(--silver-accent);width:100%}
   .svc-numeri-pending{max-width:520px;margin:0 auto;text-align:center;color:var(--silver-accent);font-style:italic;font-size:1rem;line-height:1.6}
   @media(max-width:680px){.svc-kpi .kpi__item{border-left:0;padding:14px 20px}}
+
+  /* PAYOFF */
+  .svc-payoff{max-width:720px;margin:36px auto 0;text-align:center}
+  .svc-payoff blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.4;color:#fff;margin:0}
+  .svc-payoff cite{display:block;margin-top:14px;font-style:normal;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-1)}
+  .svc-payoff p.svc-payoff__sub{margin-top:22px;font-size:1.05rem;color:var(--silver-2);line-height:1.6}
+
+  /* CONTATTACI office card (per-service) */
+  .svc-office{display:grid;grid-template-columns:auto 1fr;gap:28px;max-width:760px;margin:0 auto;align-items:stretch}
+  .svc-office__card{background:var(--white);border:1px solid var(--silver-2);border-radius:6px;padding:34px 32px;min-width:260px}
+  .svc-office__tag{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-accent)}
+  .svc-office__city{font-family:var(--serif);font-size:1.6rem;color:var(--navy-deep);margin:8px 0 10px}
+  .svc-office__addr{font-size:.95rem;color:var(--ink);opacity:.82;line-height:1.5}
+  .svc-office__email{margin-top:18px;font-size:1.05rem}
+  .svc-office__email a{color:var(--navy-deep);font-weight:600}
+  .svc-office__email a:hover{color:var(--steel)}
+  .svc-office__link{display:inline-block;margin-top:16px;font-size:13px;font-weight:600;color:var(--navy-deep)}
+  .svc-office__map{border-radius:6px;overflow:hidden;border:1px solid var(--silver-2);min-height:220px}
+  .svc-office__map iframe{width:100%;height:100%;min-height:220px;border:0;display:block;filter:grayscale(.4) contrast(1.05)}
+  @media(max-width:680px){.svc-office{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -82,6 +103,11 @@
     <div class="container">
       <span class="eyebrow eyebrow--center" data-it="Servizi" data-en="Services">Servizi</span>
       <h1 data-it-html="01 &mdash; <em>Formazione</em>" data-en-html="01 &mdash; <em>Training</em>">01 — Formazione</h1>
+      <figure class="svc-payoff reveal">
+        <blockquote data-it="Un investimento in conoscenza paga sempre l'interesse migliore" data-en="An investment in knowledge always pays the best interest">Un investimento in conoscenza paga sempre l&rsquo;interesse migliore</blockquote>
+        <cite>Benjamin Franklin</cite>
+        <p class="svc-payoff__sub" data-it="Ed &egrave; l'unico investimento che, con noi, la vostra azienda pu&ograve; fare a costo zero." data-en="And it's the only investment your company can make with us at zero cost.">Ed &egrave; l&rsquo;unico investimento che, con noi, la vostra azienda pu&ograve; fare a costo zero.</p>
+      </figure>
       <div class="svc-jump reveal">
         <a href="#descrizione" class="btn btn--ghost" data-it="Descrizione" data-en="Overview">Descrizione</a>
         <a href="#team" class="btn btn--ghost" data-it="Team" data-en="Team">Team</a>
@@ -94,12 +120,8 @@
   <section class="section" id="descrizione">
     <div class="container">
       <div class="svc-lead reveal">
-        <p data-it="Assistiamo le imprese nello sviluppo delle attivit&agrave; formative, individuando le fonti di finanziamento adatte. L&rsquo;azienda scopre che, a costo zero, pu&ograve; intraprendere percorsi formativi per i propri collaboratori: il nostro lavoro viene pagato solo a finanziamento ottenuto e a formazione conclusa." data-en="We help companies develop their training, finding the right funding sources. A company discovers it can train its people at no cost: we are paid only once the funding is obtained and the training is complete.">Assistiamo le imprese nello sviluppo delle attivit&agrave; formative, individuando le fonti di finanziamento adatte. L&rsquo;azienda scopre che, a costo zero, pu&ograve; intraprendere percorsi formativi per i propri collaboratori: il nostro lavoro viene pagato solo a finanziamento ottenuto e a formazione conclusa.</p>
-        <ul>
-          <li data-it="Obbligatoria: sicurezza sul lavoro (D.Lgs. 81/08), primo soccorso, antincendio, RSPP, RLS, HACCP, formazione di preposti e dirigenti" data-en="Mandatory: workplace safety (Legislative Decree 81/08), first aid, fire safety, RSPP, RLS, HACCP, training for supervisors and managers">Obbligatoria: sicurezza sul lavoro (D.Lgs. 81/08), primo soccorso, antincendio, RSPP, RLS, HACCP, formazione di preposti e dirigenti</li>
-          <li data-it="Su misura: leadership, team building, sviluppo manageriale, change management" data-en="Tailor-made: leadership, team building, managerial development, change management">Su misura: leadership, team building, sviluppo manageriale, change management</li>
-          <li data-it="Fondi interprofessionali: Fondimpresa, Fonarcom, Formazienda, Fondolavoro, Fondo Nuove Competenze" data-en="Interprofessional funds: Fondimpresa, Fonarcom, Formazienda, Fondolavoro, Fondo Nuove Competenze">Fondi interprofessionali: Fondimpresa, Fonarcom, Formazienda, Fondolavoro, Fondo Nuove Competenze</li>
-        </ul>
+        <p data-it="Affianchiamo le imprese nello sviluppo delle attivit&agrave; formative, consigliando di volta in volta lo strumento di finanziamento pi&ugrave; adatto &mdash; Fondimpresa, Formazienda, Fondo Lavoro, Fonarcom, Fonditalia, Fonservizi, Fondo Nuove Competenze, tra gli altri &mdash; in base al settore, alla dimensione aziendale ed al fabbisogno formativo. L'azienda pu&ograve; cos&igrave; formare i propri collaboratori a costo zero, utilizzando risorse che altrimenti resterebbero versate all'INPS senza essere mai utilizzate: il nostro compenso viene riconosciuto solo a finanziamento ottenuto, a formazione conclusa, ed &egrave; compreso nel finanziamento." data-en="We support companies in developing their training activities, recommending the most suitable funding instrument case by case &mdash; Fondimpresa, Formazienda, Fondo Lavoro, Fonarcom, Fonditalia, Fonservizi, Fondo Nuove Competenze, among others &mdash; based on sector, company size and training needs. The company can thus train its people at zero cost, using resources that would otherwise remain paid into INPS without ever being used: our fee is recognized only once funding is obtained, once training is complete, and is included in the funding itself.">Affianchiamo le imprese nello sviluppo delle attivit&agrave; formative, consigliando di volta in volta lo strumento di finanziamento pi&ugrave; adatto &mdash; Fondimpresa, Formazienda, Fondo Lavoro, Fonarcom, Fonditalia, Fonservizi, Fondo Nuove Competenze, tra gli altri &mdash; in base al settore, alla dimensione aziendale ed al fabbisogno formativo. L&rsquo;azienda pu&ograve; cos&igrave; formare i propri collaboratori a costo zero, utilizzando risorse che altrimenti resterebbero versate all&rsquo;INPS senza essere mai utilizzate: il nostro compenso viene riconosciuto solo a finanziamento ottenuto, a formazione conclusa, ed &egrave; compreso nel finanziamento.</p>
+        <p data-it="Non tutta la formazione pu&ograve; essere finanziata da un fondo interprofessionale: a volte serve attivare un percorso pi&ugrave; rapidamente di quanto consentano i tempi di un bando, altre volte i contenuti richiesti non rientrano fra quelli che il fondo copre. In questi casi realizziamo la formazione commissionata direttamente dall'azienda a condizioni di mercato: stessa cura nella progettazione riservata ai percorsi finanziati, con in pi&ugrave; i vantaggi della rapidit&agrave; e flessibilit&agrave;." data-en="Not all training can be funded through an interprofessional fund: sometimes a program needs to start faster than a call's timeline allows, other times the content requested isn't covered by the fund. In these cases we deliver training commissioned directly by the company at market terms: the same care in design as our funded programs, with the added benefits of speed and flexibility.">Non tutta la formazione pu&ograve; essere finanziata da un fondo interprofessionale: a volte serve attivare un percorso pi&ugrave; rapidamente di quanto consentano i tempi di un bando, altre volte i contenuti richiesti non rientrano fra quelli che il fondo copre. In questi casi realizziamo la formazione commissionata direttamente dall&rsquo;azienda a condizioni di mercato: stessa cura nella progettazione riservata ai percorsi finanziati, con in pi&ugrave; i vantaggi della rapidit&agrave; e flessibilit&agrave;.</p>
       </div>
     </div>
   </section>
@@ -110,6 +132,7 @@
       <div class="section__head reveal">
         <h2 data-it-html="Il team <em class=&quot;hl&quot;>Formazione</em>" data-en-html="The <em class=&quot;hl&quot;>Training</em> Team">Il team Formazione</h2>
       </div>
+      <!-- CLIENT NOTE: team attributions need correction per client, but the specific corrections/3-area schema were not included as a usable diagram in the source doc — needs a follow-up from the client -->
       <div class="team-groups reveal">
         <div class="team-group">
           <div class="team-group__head">
@@ -121,6 +144,11 @@
             <a href="/team/andrea.html" class="team-card"><div class="team-card__photo"><img src="/img/team/andrea.jpg" alt="Andrea Ungaro" style="object-position:center 20%"></div><div class="team-card__name">Andrea Ungaro</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
             <a href="/team/giovanni.html" class="team-card"><div class="team-card__photo"><img src="/img/team/giovanni.jpg" alt="Giovanni Di Genio" style="object-position:center 18%"></div><div class="team-card__name">Giovanni Di Genio</div><div class="team-card__role" data-it="Collaboratore Senior" data-en="Senior Collaborator">Collaboratore Senior</div></a>
             <a href="/team/silvia.html" class="team-card"><div class="team-card__photo">S</div><div class="team-card__name">Silvia Ungaro</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
+            <a href="/team/roberto.html" class="team-card"><div class="team-card__photo">R</div><div class="team-card__name">Roberto James Aloi</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
+            <a href="/team/carole.html" class="team-card"><div class="team-card__photo">C</div><div class="team-card__name">Carole Conti</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
+            <a href="/team/roberta.html" class="team-card"><div class="team-card__photo"><img src="/img/team/roberta.jpg" alt="Roberta Tagliani" style="object-position:center 18%"></div><div class="team-card__name">Roberta Tagliani</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
+            <a href="/team/francesca.html" class="team-card"><div class="team-card__photo">F</div><div class="team-card__name">Francesca Rossini</div><div class="team-card__role" data-it="Junior Partner" data-en="Junior Partner">Junior Partner</div></a>
+            <a href="/team/lavinia.html" class="team-card"><div class="team-card__photo"><img src="/img/team/lavinia.jpg" alt="Lavinia Di Genio" style="object-position:center 8%"></div><div class="team-card__name">Lavinia Di Genio</div><div class="team-card__role" data-it="Collaboratrice Junior" data-en="Junior Collaborator">Collaboratrice Junior</div></a>
           </div>
         </div>
       </div>
@@ -134,23 +162,33 @@
         <h2 data-it-html="I nostri <em class=&quot;hl&quot;>numeri</em>" data-en-html="Our <em class=&quot;hl&quot;>Numbers</em>">I nostri <em class="hl">numeri</em></h2>
       </div>
       <div class="svc-kpi reveal">
-        <div class="kpi__item"><div class="kpi__num"><span class="count" data-target="5040">0</span></div><div class="kpi__label" data-it="Partecipanti formati" data-en="People trained">Partecipanti formati</div></div>
+        <div class="kpi__item"><div class="kpi__num"><span class="count" data-target="5040">0</span></div><div class="kpi__label" data-it="Persone formate" data-en="People trained">Persone formate</div></div>
         <div class="kpi__item"><div class="kpi__num"><span class="count" data-target="391">0</span></div><div class="kpi__label" data-it="Aziende coinvolte" data-en="Companies involved">Aziende coinvolte</div></div>
-        <div class="kpi__item"><div class="kpi__num"><span class="count" data-target="10058">0</span></div><div class="kpi__label" data-it="Ore di formazione erogate" data-en="Training hours delivered">Ore di formazione erogate</div></div>
+        <div class="kpi__item"><div class="kpi__num"><span class="count" data-target="10058">0</span></div><div class="kpi__label" data-it="Ore di formazione totali" data-en="Total training hours">Ore di formazione totali</div></div>
+        <div class="kpi__item"><div class="kpi__num kpi__num--pending" data-it="In raccolta" data-en="Being collected">In raccolta</div><div class="kpi__label" data-it="Ore di formazione OFA" data-en="OFA training hours">Ore di formazione OFA</div></div>
         <div class="kpi__item"><div class="kpi__num"><span class="count" data-target="1006">0</span></div><div class="kpi__label" data-it="Corsi erogati" data-en="Courses delivered">Corsi erogati</div></div>
-        <p class="kpi__note reveal" data-it="Dati 2024&ndash;2025 &middot; piani formativi finanziati dai fondi interprofessionali (Fondimpresa). Fonte: rendicontazione Polaris HR." data-en="2024&ndash;2025 data &middot; training plans funded by interprofessional funds (Fondimpresa). Source: Polaris HR reporting.">Dati 2024&ndash;2025 &middot; piani formativi finanziati dai fondi interprofessionali (Fondimpresa). Fonte: rendicontazione Polaris HR.</p>
+        <div class="kpi__item"><div class="kpi__num kpi__num--pending" data-it="In raccolta" data-en="Being collected">In raccolta</div><div class="kpi__label" data-it="Finanziamenti ottenuti dalle aziende" data-en="Funding obtained for companies">Finanziamenti ottenuti dalle aziende</div></div>
+        <p class="kpi__note reveal" data-it="Dati 2024&ndash;2025 &middot; piani formativi finanziati dai fondi interprofessionali (Fondimpresa). Fonte: rendicontazione Polaris HR. Per il momento tralasciamo i dati per singolo piano, ai quali dedicheremo un'apposita sezione del sito nell'area Formazione." data-en="2024&ndash;2025 data &middot; training plans funded by interprofessional funds (Fondimpresa). Source: Polaris HR reporting. For now we're leaving out per-plan data, which will get its own dedicated section in the Formazione area.">Dati 2024&ndash;2025 &middot; piani formativi finanziati dai fondi interprofessionali (Fondimpresa). Fonte: rendicontazione Polaris HR. Per il momento tralasciamo i dati per singolo piano, ai quali dedicheremo un&rsquo;apposita sezione del sito nell&rsquo;area Formazione.</p>
       </div>
     </div>
   </section>
 
   <!-- CONTATTACI -->
   <section class="section section--cream">
-    <div class="container text-center reveal">
-      <div class="ask">
-        <h2 class="ask__title" data-it-html="Hai <em>domande?</em>" data-en-html="Have <em>Questions?</em>">Hai <em>domande?</em></h2>
-        <div class="ask__buttons">
-          <button class="btn btn--primary" type="button" data-open-contact data-it-html="Contattaci &rarr;" data-en-html="Contact us &rarr;">Contattaci &rarr;</button>
-          <a href="/servizi.html" class="btn btn--ghost" data-it="Tutti i servizi" data-en="All services">Tutti i servizi</a>
+    <div class="container reveal">
+      <div class="section__head">
+        <h2 data-it-html="Contattaci <em class=&quot;hl&quot;>per la formazione</em>" data-en-html="Contact Us <em class=&quot;hl&quot;>about Training</em>">Contattaci <em class="hl">per la formazione</em></h2>
+      </div>
+      <div class="svc-office">
+        <div class="svc-office__card">
+          <div class="svc-office__tag" data-it="Polaris HR srl" data-en="Polaris HR srl">Polaris HR srl</div>
+          <div class="svc-office__city">Crema</div>
+          <p class="svc-office__addr">Via del Commercio 29<br>26013 Crema (CR)</p>
+          <div class="svc-office__email"><a href="mailto:segreteria@polaris-group.it">segreteria@polaris-group.it</a></div>
+          <a class="svc-office__link" href="/servizi.html" data-it="Tutti i servizi →" data-en="All services →">Tutti i servizi →</a>
+        </div>
+        <div class="svc-office__map">
+          <iframe title="Mappa, Polaris HR, Crema" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Via%20del%20Commercio%2029%2C%2026013%20Crema%20CR%20Italy&output=embed"></iframe>
         </div>
       </div>
     </div>
@@ -174,7 +212,7 @@
     <div class="footer__col">
       <h4 data-it="Contatti" data-en="Contact">Contatti</h4>
       <ul>
-        <li><a href="mailto:info@polaris-group.it">info@polaris-group.it</a></li>
+        <li><a href="mailto:segreteria@polaris-group.it">segreteria@polaris-group.it</a></li>
         <li><a href="tel:+390373250072">+39 0373 250072</a></li>
         <li><a data-it="Via del Commercio 29, 26013 Crema (CR)" data-en="Via del Commercio 29, 26013 Crema (CR)">Via del Commercio 29, 26013 Crema (CR)</a></li>
       </ul>

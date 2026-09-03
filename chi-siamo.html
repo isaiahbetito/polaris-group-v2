@@ -14,6 +14,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
+  /* CREMA PHOTO */
+  .crema-photo{margin:0;max-width:1100px;padding:0 32px 0;margin-left:auto;margin-right:auto}
+  .crema-photo img{width:100%;height:clamp(280px,42vw,480px);object-fit:cover;object-position:center 30%;border-radius:6px;display:block}
+  .crema-photo figcaption{margin-top:14px;text-align:center;font-size:.8rem;color:var(--silver-accent);font-style:italic}
+
   /* BRAND STATEMENT */
   .statement{position:relative;overflow:hidden;text-align:center;padding:var(--sp-16) 0 var(--sp-12);
     background:radial-gradient(75% 95% at 50% 26%,#ffffff,var(--cream))}
@@ -101,8 +106,13 @@
     </div>
   </section>
 
+  <!-- CREMA PHOTO -->
+  <figure class="crema-photo reveal">
+    <img src="/img/crema-santa-maria-croce.jpeg" alt="Santuario di Santa Maria della Croce, Crema" loading="lazy">
+    <figcaption data-it="Santuario di Santa Maria della Croce, Crema" data-en="Sanctuary of Santa Maria della Croce, Crema">Santuario di Santa Maria della Croce, Crema</figcaption>
+  </figure>
+
   <!-- DESCRIZIONE -->
-  <!-- Pending asset: header photo of Santa Maria della Croce, Crema (per client's revision note) -->
   <section class="section section--cream" style="padding-top:0">
     <div class="container container--narrow">
       <p class="lead reveal" data-it-html="Polaris Group nasce a Crema nel 2015 da una convinzione precisa: crediamo che un'impresa cresca quando la mission &egrave; chiara, quando le persone lavorano in un clima di fiducia, quando le competenze sono solide, quando i collaboratori hanno spazio reale per incidere sulle scelte operative e strategiche e quando le risorse finanziarie sono gestite con competenza. La parte pi&ugrave; difficile del nostro lavoro, del resto, non &egrave; mai quella tecnica." data-en-html="Polaris Group was founded in Crema in 2015 out of one clear conviction: a company grows when its mission is clear, when people work in a climate of trust, when skills are solid, when collaborators have real room to shape operational and strategic choices, and when financial resources are managed with competence. The hardest part of our work, after all, is never the technical part.">Polaris Group nasce a Crema nel 2015 da una convinzione precisa: crediamo che un&rsquo;impresa cresca quando la mission &egrave; chiara, quando le persone lavorano in un clima di fiducia, quando le competenze sono solide, quando i collaboratori hanno spazio reale per incidere sulle scelte operative e strategiche e quando le risorse finanziarie sono gestite con competenza. La parte pi&ugrave; difficile del nostro lavoro, del resto, non &egrave; mai quella tecnica.</p>
@@ -243,7 +253,7 @@
     <div class="footer__col">
       <h4 data-it="Contatti" data-en="Contact">Contatti</h4>
       <ul>
-        <li><a href="mailto:info@polaris-group.it">info@polaris-group.it</a></li>
+        <li><a href="mailto:segreteria@polaris-group.it">segreteria@polaris-group.it</a></li>
         <li><a href="tel:+390373250072">+39 0373 250072</a></li>
         <li><a data-it="Via del Commercio 29, 26013 Crema (CR)" data-en="Via del Commercio 29, 26013 Crema (CR)">Via del Commercio 29, 26013 Crema (CR)</a></li>
       </ul>
