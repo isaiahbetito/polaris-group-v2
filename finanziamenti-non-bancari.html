@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Finanziamenti Non Bancari | Polaris Group, Crema</title>
+<meta name="description" content="Invoice trading e strumenti di finanza alternativa al canale bancario per le PMI italiane. Un servizio erogato da Hazard Venture, società del Gruppo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  /* JUMP NAV */
+  .svc-jump{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px}
+  .page-head .svc-jump .btn--ghost{color:#fff;border-color:rgba(255,255,255,.4)}
+  .page-head .svc-jump .btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+  /* DESCRIZIONE */
+  .svc-lead{max-width:760px;margin:0 auto}
+  .svc-lead p{font-size:1.08rem;line-height:1.7;color:var(--ink);opacity:.85;margin-bottom:22px}
+  .svc-lead p:last-child{margin-bottom:0}
+  .svc-lead ul{list-style:none;margin-top:26px}
+  .svc-lead ul li{position:relative;padding-left:22px;font-size:1rem;color:var(--ink);opacity:.85;margin-bottom:10px;line-height:1.5}
+  .svc-lead ul li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--silver-accent)}
+
+  /* TEAM (shared with chi-siamo.html) */
+  .team-groups{display:flex;flex-direction:column;gap:56px;margin-top:8px}
+  .team-group__head{text-align:center;margin-bottom:28px}
+  .team-group__eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--silver-accent)}
+  .team-group__eyebrow::before,.team-group__eyebrow::after{content:"";width:32px;height:1px;background:var(--silver-2)}
+  .team-groups .team-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:40px 24px;margin-top:0}
+  .team-groups .team-card{width:200px;flex:0 0 200px;text-align:center}
+  .team-card__photo{position:relative;width:148px;height:148px;margin:0 auto 18px;border-radius:50%;overflow:hidden;background:var(--navy-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2.6rem;font-weight:500;box-shadow:0 0 0 1px var(--silver-1),0 0 0 6px var(--white),0 0 0 7px var(--silver-2);transition:transform .25s var(--ease)}
+  .team-card__photo img{width:100%;height:100%;object-fit:cover;object-position:center 14%}
+  .team-card__photo::after{content:"VIEW FULL PROFILE";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 14px;background:rgba(8,28,52,.88);color:#fff;font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.16em;line-height:1.3;border-radius:50%;opacity:0;transition:opacity .3s var(--ease);pointer-events:none}
+  .team-card:hover .team-card__photo{transform:translateY(-4px)}
+  .team-card:hover .team-card__photo::after{opacity:1}
+  .team-card--lead .team-card__photo{background:linear-gradient(160deg,#0B2E4F,#1A3A5F)}
+  .team-card__name{font-family:var(--serif);font-size:1.3rem;color:var(--ink)}
+  .team-card__role{margin-top:2px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--silver-accent)}
+  @media(max-width:860px){ .team-groups .team-grid{gap:32px 12px} .team-groups .team-card{width:calc(50% - 6px);flex:0 0 calc(50% - 6px)} }
+
+  /* PARTNERSHIP NOTE (services delivered by partners, not in-house) */
+  .partner-note{max-width:640px;margin:0 auto;text-align:center;background:var(--cream);border:1px solid var(--silver-2);border-radius:6px;padding:48px 44px}
+  .partner-note__tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--silver-accent);background:var(--white);border:1px solid var(--silver-2);border-radius:999px;padding:6px 14px;margin-bottom:22px}
+  .partner-note p{font-size:1.02rem;line-height:1.7;color:var(--ink);opacity:.85}
+  .partner-note a{color:var(--navy-deep);font-weight:600}
+  .partner-note a:hover{color:var(--steel)}
+
+  /* NUMERI */
+  .svc-kpi{display:flex;justify-content:center;flex-wrap:wrap;gap:0;max-width:900px;margin:0 auto}
+  .svc-kpi .kpi__item{padding:8px 30px;border-left:1px solid var(--silver-2);text-align:center}
+  .svc-kpi .kpi__item:first-child{border-left:0}
+  .svc-kpi .kpi__num{font-family:var(--serif);font-weight:600;font-size:clamp(2.6rem,5vw,3.8rem);color:var(--navy-deep);line-height:1}
+  .svc-kpi .kpi__label{margin-top:12px;font-size:.85rem;color:var(--steel);line-height:1.4}
+  .svc-kpi .kpi__note{margin-top:36px;text-align:center;font-size:.78rem;letter-spacing:.02em;color:var(--silver-accent);width:100%}
+  .svc-numeri-pending{max-width:520px;margin:0 auto;text-align:center;color:var(--silver-accent);font-style:italic;font-size:1rem;line-height:1.6}
+  @media(max-width:680px){.svc-kpi .kpi__item{border-left:0;padding:14px 20px}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo" aria-label="Polaris Group"><img src="/img/logo-lockup.png" alt="Polaris Group"></a>
+    <button class="nav__toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav__links">
+      <li><a href="/chi-siamo.html" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+      <li><a href="/servizi.html" class="is-active" data-it="Servizi" data-en="Services">Servizi</a></li>
+      <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
+      <li><a href="/contatti.html" class="nav__cta" data-it="Contattaci" data-en="Get in Touch">Contattaci</a></li>
+      <li><button type="button" class="lang-switch" aria-label="Cambia lingua"><span class="lang-switch__opt on" data-lang="it">IT</span><span>/</span><span class="lang-switch__opt" data-lang="en">EN</span></button></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <header class="page-head">
+    <div class="container">
+      <span class="eyebrow eyebrow--center" data-it="Servizi" data-en="Services">Servizi</span>
+      <h1 data-it-html="03 &mdash; <em>Finanziamenti non bancari</em>" data-en-html="03 &mdash; <em>Non-Bank Financing</em>">03 — Finanziamenti non bancari</h1>
+      <div class="svc-jump reveal">
+        <a href="#descrizione" class="btn btn--ghost" data-it="Descrizione" data-en="Overview">Descrizione</a>
+        <a href="#team" class="btn btn--ghost" data-it="Team" data-en="Team">Team</a>
+        <a href="#numeri" class="btn btn--ghost" data-it="I nostri numeri" data-en="Our Numbers">I nostri numeri</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- DESCRIZIONE -->
+  <section class="section" id="descrizione">
+    <div class="container">
+      <div class="svc-lead reveal">
+        <p data-it="Le aziende falliscono per cassa, non per debiti. Hazard Venture diversifica le fonti di approvvigionamento finanziario oltre il canale bancario tradizionale, con strumenti che non impattano la Centrale Rischi e non consumano i castelletti." data-en="Companies fail for cash, not for debt. Hazard Venture diversifies funding sources beyond the traditional bank channel, with tools that don't affect the credit registry or use up credit lines.">Le aziende falliscono per cassa, non per debiti. Hazard Venture diversifica le fonti di approvvigionamento finanziario oltre il canale bancario tradizionale, con strumenti che non impattano la Centrale Rischi e non consumano i castelletti.</p>
+        <ul>
+          <li data-it="Invoice trading: cessione di fatture a investitori qualificati su piattaforme regolamentate" data-en="Invoice trading: sale of invoices to qualified investors on regulated platforms">Invoice trading: cessione di fatture a investitori qualificati su piattaforme regolamentate</li>
+          <li data-it="Minibond e titoli di debito" data-en="Minibonds &amp; debt securities">Minibond e titoli di debito</li>
+          <li data-it="Operazioni di equity, M&amp;A e supply chain" data-en="Equity, M&amp;A and supply-chain operations">Operazioni di equity, M&amp;A e supply chain</li>
+          <li data-it="Servizio erogato tramite Hazard srl, societ&agrave; del Gruppo" data-en="Service delivered through Hazard srl, a Group company">Servizio erogato tramite Hazard srl, societ&agrave; del Gruppo</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section section--cream" id="team">
+    <div class="container">
+      <div class="section__head reveal">
+        <h2 data-it-html="Il team <em class=&quot;hl&quot;>Finanziamenti</em>" data-en-html="The <em class=&quot;hl&quot;>Financing</em> Team">Il team Finanziamenti</h2>
+      </div>
+      <div class="team-groups reveal">
+        <div class="team-group">
+          <div class="team-group__head">
+            <span class="team-group__eyebrow" data-it="Area Economico-Finanziaria" data-en="Finance &amp; Control">Area Economico-Finanziaria</span>
+          </div>
+          <div class="team-grid">
+            <a href="/team/alessio.html" class="team-card"><div class="team-card__photo"><img src="/img/team/alessio.jpg" alt="Alessio Di Cesare" style="object-position:center 16%"></div><div class="team-card__name">Alessio Di Cesare</div><div class="team-card__role" data-it="Responsabile Amministrativo" data-en="Head of Administration">Responsabile Amministrativo</div></a>
+            <a href="/team/gianmaria.html" class="team-card"><div class="team-card__photo">G</div><div class="team-card__name">Gianmaria Bassani</div><div class="team-card__role" data-it="Amministrazione" data-en="Administration">Amministrazione</div></a>
+            <a href="/team/cristina.html" class="team-card"><div class="team-card__photo"><img src="/img/team/cristina.jpg" alt="Cristina Milanesi" style="object-position:center 26%"></div><div class="team-card__name">Cristina Milanesi</div><div class="team-card__role" data-it="Front &amp; Back Office" data-en="Front &amp; Back Office">Front &amp; Back Office</div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMERI -->
+  <section class="section" id="numeri">
+    <div class="container">
+      <div class="section__head reveal">
+        <h2 data-it-html="I nostri <em class=&quot;hl&quot;>numeri</em>" data-en-html="Our <em class=&quot;hl&quot;>Numbers</em>">I nostri <em class="hl">numeri</em></h2>
+      </div>
+      <p class="svc-numeri-pending reveal" data-it="Dati in raccolta per questo servizio. Verranno pubblicati non appena disponibili." data-en="Data for this service is being collected and will be published as soon as it's available.">Dati in raccolta per questo servizio. Verranno pubblicati non appena disponibili.</p>
+    </div>
+  </section>
+
+  <!-- CONTATTACI -->
+  <section class="section section--cream">
+    <div class="container text-center reveal">
+      <div class="ask">
+        <h2 class="ask__title" data-it-html="Hai <em>domande?</em>" data-en-html="Have <em>Questions?</em>">Hai <em>domande?</em></h2>
+        <div class="ask__buttons">
+          <button class="btn btn--primary" type="button" data-open-contact data-it-html="Contattaci &rarr;" data-en-html="Contact us &rarr;">Contattaci &rarr;</button>
+          <a href="/servizi.html" class="btn btn--ghost" data-it="Tutti i servizi" data-en="All services">Tutti i servizi</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__brand">
+      <img class="footer__logo" src="/img/logo-lockup.png" alt="Polaris Group">
+      <p data-it="La forza della visione, al servizio delle imprese. Formazione, finanza non bancaria, advisory direzionale." data-en="The power of vision, at the service of businesses. Training, non-bank finance, strategic advisory.">La forza della visione, al servizio delle imprese. Formazione, finanza non bancaria, advisory direzionale.</p>
+    </div>
+    <div class="footer__col">
+      <h4 data-it="Sito" data-en="Site">Sito</h4>
+      <ul>
+        <li><a href="/chi-siamo.html" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+        <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
+        <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4 data-it="Contatti" data-en="Contact">Contatti</h4>
+      <ul>
+        <li><a href="mailto:info@polaris-group.it">info@polaris-group.it</a></li>
+        <li><a href="tel:+390373250072">+39 0373 250072</a></li>
+        <li><a data-it="Via del Commercio 29, 26013 Crema (CR)" data-en="Via del Commercio 29, 26013 Crema (CR)">Via del Commercio 29, 26013 Crema (CR)</a></li>
+      </ul>
+    </div>
+    <div class="footer__col">
+      <h4 data-it="Gruppo" data-en="Group">Gruppo</h4>
+      <ul>
+        <li><a href="/">Polaris Group</a></li>
+        <li><a href="/formazione.html">Polaris HR srl</a></li>
+        <li><a href="/finanziamenti-non-bancari.html">Hazard Venture</a></li>
+        <li><a href="https://runcapital.partners" target="_blank" rel="noopener">Run Capital Partners &#8599;</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__legal">
+    <span data-it="&copy; 2026 Polaris Group &middot; P.IVA 01616620199 &middot; Tutti i diritti riservati" data-en="&copy; 2026 Polaris Group &middot; VAT 01616620199 &middot; All rights reserved">&copy; 2026 Polaris Group &middot; P.IVA 01616620199 &middot; Tutti i diritti riservati</span>
+    <span><a href="/privacy.html" data-it="Privacy" data-en="Privacy">Privacy</a> &nbsp;&middot;&nbsp; <a href="/cookie.html" data-it="Cookie" data-en="Cookie">Cookie</a></span>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>
