@@ -43,6 +43,7 @@ em.hl{font-style:italic;color:var(--steel)}
 .nav__links a.is-active{color:var(--navy-deep)}
 .nav__cta{font-weight:500;opacity:.82}
 .nav__cta:hover{opacity:1}
+.nav__right{display:flex;align-items:center;gap:20px}
 .lang-switch{display:flex;gap:5px;font-size:12px;font-weight:600;letter-spacing:1px;color:var(--silver-accent);background:none;border:0;cursor:pointer}
 .lang-switch__opt.on{color:var(--navy-deep)}
 .nav__toggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px}
