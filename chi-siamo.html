@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chi Siamo | Polaris Group, Crema</title>
-<meta name="description" content="Chi è Polaris Group: la nostra missione, il gruppo (Polaris HR srl, Hazard srl) e il team che segue formazione, finanza non bancaria e advisory per le PMI italiane.">
+<meta name="description" content="Chi è Polaris Group: la nostra missione, il gruppo di cinque realtà coordinate e il team che segue formazione, finanza non bancaria e advisory per le PMI italiane.">
 <link rel="canonical" href="https://polaris-group-xi.vercel.app/chi-siamo.html">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
@@ -35,9 +35,12 @@
   .method-note h2 em{font-weight:600;font-style:italic;color:var(--silver-1)}
 
   /* IL GRUPPO */
-  .grp-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:var(--sp-8) auto 0}
+  .grp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:24px;max-width:1140px;margin:var(--sp-8) auto 0}
   .grp-card{background:rgba(255,255,255,.05);border:1px solid rgba(184,194,204,.22);border-radius:6px;padding:34px 32px;backdrop-filter:blur(4px);transition:transform .3s var(--ease),border-color .3s var(--ease)}
   .grp-card:hover{transform:translateY(-5px);border-color:rgba(184,194,204,.5)}
+  .grp-card__tag{display:block;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:14px}
+  .grp-card--partner{border-style:dashed}
+  .grp-card--partner .grp-card__tag{color:#9fb8d4}
   .grp-card__t{font-family:var(--serif);font-size:1.5rem;color:#fff;margin-bottom:10px}
   .grp-card__b{font-size:.95rem;line-height:1.55;color:var(--silver-2);opacity:.92}
   .grp-card__meta{margin-top:20px;padding-top:18px;border-top:1px solid rgba(184,194,204,.18);font-size:.8rem;color:var(--silver-accent);font-style:italic}
@@ -98,14 +101,11 @@
     </div>
   </section>
 
-  <!-- BELIEF QUOTE -->
+  <!-- DESCRIZIONE -->
+  <!-- Pending asset: header photo of Santa Maria della Croce, Crema (per client's revision note) -->
   <section class="section section--cream" style="padding-top:0">
-    <div class="container">
-      <figure class="belief-quote reveal">
-        <span class="belief-quote__mk" aria-hidden="true">&ldquo;</span>
-        <blockquote data-it-html="Crediamo che le imprese debbano passare da una logica di breve periodo a una di lungo periodo: restare nel mercato il pi&ugrave; a lungo possibile, <em>lasciando le cose meglio di come le hanno trovate.</em>" data-en-html="We believe companies should move from short-term thinking to the long term: staying in the market as long as possible, <em>leaving things better than they found them.</em>">Crediamo che le imprese debbano passare da una logica di breve periodo a una di lungo periodo: restare nel mercato il pi&ugrave; a lungo possibile, <em>lasciando le cose meglio di come le hanno trovate.</em></blockquote>
-        <figcaption class="belief-quote__by">Cesare Trebeschi</figcaption>
-      </figure>
+    <div class="container container--narrow">
+      <p class="lead reveal" data-it-html="Polaris Group nasce a Crema nel 2015 da una convinzione precisa: crediamo che un'impresa cresca quando la mission &egrave; chiara, quando le persone lavorano in un clima di fiducia, quando le competenze sono solide, quando i collaboratori hanno spazio reale per incidere sulle scelte operative e strategiche e quando le risorse finanziarie sono gestite con competenza. La parte pi&ugrave; difficile del nostro lavoro, del resto, non &egrave; mai quella tecnica." data-en-html="Polaris Group was founded in Crema in 2015 out of one clear conviction: a company grows when its mission is clear, when people work in a climate of trust, when skills are solid, when collaborators have real room to shape operational and strategic choices, and when financial resources are managed with competence. The hardest part of our work, after all, is never the technical part.">Polaris Group nasce a Crema nel 2015 da una convinzione precisa: crediamo che un&rsquo;impresa cresca quando la mission &egrave; chiara, quando le persone lavorano in un clima di fiducia, quando le competenze sono solide, quando i collaboratori hanno spazio reale per incidere sulle scelte operative e strategiche e quando le risorse finanziarie sono gestite con competenza. La parte pi&ugrave; difficile del nostro lavoro, del resto, non &egrave; mai quella tecnica.</p>
     </div>
   </section>
 
@@ -114,20 +114,52 @@
     <div class="container">
       <div class="method-note reveal">
         <span class="eyebrow eyebrow--center" data-it="Il Gruppo" data-en="The Group">Il Gruppo</span>
-        <h2 data-it-html="Due societ&agrave;<br><em>un solo riferimento</em>" data-en-html="Two Companies<br><em>one point of contact</em>">Due societ&agrave;<br><em>un solo riferimento</em></h2>
+        <h2 data-it-html="Cinque realt&agrave;<br><em>un solo coordinamento</em>" data-en-html="Five Entities<br><em>One Coordinated Group</em>">Cinque realt&agrave;<br><em>un solo coordinamento</em></h2>
+        <p class="lead" style="color:var(--silver-2);margin-top:20px" data-it="Il gruppo si avvale delle competenze di cinque realt&agrave; che lavorano in efficace coordinamento:" data-en="The group draws on the expertise of five entities working in effective coordination:">Il gruppo si avvale delle competenze di cinque realt&agrave; che lavorano in efficace coordinamento:</p>
       </div>
       <div class="grp-grid reveal">
         <a class="grp-card" href="/servizi.html#formazione">
+          <span class="grp-card__tag" data-it="Gruppo" data-en="Group">Gruppo</span>
           <h3 class="grp-card__t">Polaris HR srl</h3>
-          <p class="grp-card__b" data-it="Formazione obbligatoria, su misura e advisory direzionale per le PMI italiane." data-en="Mandatory and tailor-made training, plus strategic advisory for Italian SMEs.">Formazione obbligatoria, su misura e advisory direzionale per le PMI italiane.</p>
+          <p class="grp-card__b" data-it="Si dedica alla formazione, anche finanziata dai fondi interprofessionali, a favore del personale delle imprese." data-en="Dedicated to training, including funded through interprofessional funds, for company staff.">Si dedica alla formazione, anche finanziata dai fondi interprofessionali, a favore del personale delle imprese.</p>
           <div class="grp-card__meta">P.IVA 01616620199 &middot; Crema, Italia</div>
         </a>
+        <div class="grp-card">
+          <span class="grp-card__tag" data-it="Gruppo" data-en="Group">Gruppo</span>
+          <h3 class="grp-card__t">Polaris</h3>
+          <p class="grp-card__b" data-it="Intermediario del credito e soggetto vigilato OAM, affianca le imprese nell'accesso al credito bancario e le assiste con consulenza di alta specializzazione finanziaria." data-en="Credit intermediary and OAM-supervised entity, supporting companies in accessing bank credit and assisting them with highly specialized financial advisory.">Intermediario del credito e soggetto vigilato OAM, affianca le imprese nell&rsquo;accesso al credito bancario e le assiste con consulenza di alta specializzazione finanziaria.</p>
+          <div class="grp-card__meta" data-it="Intermediario del credito &middot; Vigilato OAM" data-en="Credit intermediary &middot; OAM-supervised">Intermediario del credito &middot; Vigilato OAM</div>
+        </div>
         <a class="grp-card" href="/servizi.html#invoice-trading">
-          <h3 class="grp-card__t">Hazard srl</h3>
-          <p class="grp-card__b" data-it="Invoice trading: cessione di fatture a investitori qualificati su piattaforme regolamentate." data-en="Invoice trading: sale of invoices to qualified investors on regulated platforms.">Invoice trading: cessione di fatture a investitori qualificati su piattaforme regolamentate.</p>
+          <span class="grp-card__tag" data-it="Gruppo" data-en="Group">Gruppo</span>
+          <h3 class="grp-card__t">Hazard Venture</h3>
+          <p class="grp-card__b" data-it="Offre alle imprese supporto per gli strumenti di finanza alternativa al canale bancario." data-en="Offers companies support with alternative finance instruments beyond the banking channel.">Offre alle imprese supporto per gli strumenti di finanza alternativa al canale bancario.</p>
           <div class="grp-card__meta" data-it="Societ&agrave; del Gruppo" data-en="Group company">Societ&agrave; del Gruppo</div>
         </a>
+        <a class="grp-card grp-card--partner" href="https://runcapital.partners" target="_blank" rel="noopener">
+          <span class="grp-card__tag" data-it="Partner" data-en="Partner">Partner</span>
+          <h3 class="grp-card__t">Run Capital Partners</h3>
+          <p class="grp-card__b" data-it="Consulenza patrimoniale, distribuzione di Fondi, Asset Management e Mercati Globali." data-en="Wealth advisory, fund distribution, Asset Management and Global Markets.">Consulenza patrimoniale, distribuzione di Fondi, Asset Management e Mercati Globali.</p>
+          <div class="grp-card__meta" data-it="Lussemburgo &middot; Partnership strategica" data-en="Luxembourg &middot; Strategic partnership">Lussemburgo &middot; Partnership strategica</div>
+        </a>
+        <a class="grp-card grp-card--partner" href="https://3dots.com" target="_blank" rel="noopener">
+          <span class="grp-card__tag" data-it="Partner" data-en="Partner">Partner</span>
+          <h3 class="grp-card__t">3Dots Capital</h3>
+          <p class="grp-card__b" data-it="Affianca le imprese per arrivare alla quotazione al Nasdaq, il mercato borsistico statunitense." data-en="Supports companies on the path to a Nasdaq listing, the U.S. stock exchange.">Affianca le imprese per arrivare alla quotazione al Nasdaq, il mercato borsistico statunitense.</p>
+          <div class="grp-card__meta" data-it="New York &middot; Spin Off" data-en="New York &middot; Spin off">New York &middot; Spin Off</div>
+        </a>
       </div>
+    </div>
+  </section>
+
+  <!-- CHIUSURA -->
+  <section class="section section--cream">
+    <div class="container container--narrow">
+      <p class="lead reveal" data-it="Non lavoriamo per singoli adempimenti, ma per relazioni di lungo periodo: seguiamo l'impresa dall'individuazione delle necessit&agrave; al risultato finale, condividendone i rischi dal momento che il compenso per il nostro lavoro &egrave; a success fee." data-en="We don't work task by task &mdash; we build long-term relationships: we follow a company from identifying its needs through to the final result, sharing the risk since our compensation is success-fee based.">Non lavoriamo per singoli adempimenti, ma per relazioni di lungo periodo: seguiamo l&rsquo;impresa dall&rsquo;individuazione delle necessit&agrave; al risultato finale, condividendone i rischi dal momento che il compenso per il nostro lavoro &egrave; a success fee.</p>
+      <figure class="belief-quote reveal" style="margin-top:var(--sp-8)">
+        <span class="belief-quote__mk" aria-hidden="true">&ldquo;</span>
+        <blockquote data-it="Corriamo per vincere. Ma la maratona del mercato, non lo sprint del giorno. E vogliamo lasciare la strada migliore di come l'abbiamo trovata." data-en="We run to win. But the market's marathon, not the day's sprint. And we want to leave the road better than we found it.">Corriamo per vincere. Ma la maratona del mercato, non lo sprint del giorno. E vogliamo lasciare la strada migliore di come l&rsquo;abbiamo trovata.</blockquote>
+      </figure>
     </div>
   </section>
 
