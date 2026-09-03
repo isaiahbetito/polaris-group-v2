@@ -52,15 +52,16 @@
 
   /* NAV */
   .nav{position:fixed;top:0;left:0;right:0;z-index:50;background:transparent;border-bottom:1px solid transparent;transition:background .3s var(--ease),border-color .3s var(--ease)}
-  .nav__inner{max-width:1200px;margin:0 auto;padding:0 32px;height:88px;display:flex;align-items:center;justify-content:space-between}
+  .nav__inner{position:relative;max-width:1200px;margin:0 auto;padding:0 32px;height:88px;display:flex;align-items:center;justify-content:space-between}
   .nav__logo{display:flex;align-items:center;gap:12px}
   .nav__logo img{height:60px;width:auto;filter:brightness(0) invert(1);transition:filter .3s} /* white over the dark hero; navy on the solid bar */
   .nav__logo span{font-family:var(--sans);font-weight:700;letter-spacing:1.5px;font-size:18px;color:#fff;transition:color .3s}
   .nav__logo .grp{color:var(--silver-1)}
-  .nav__links{display:flex;align-items:center;gap:32px;list-style:none}
+  .nav__links{display:flex;align-items:center;gap:32px;list-style:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
   .nav__links a{font-size:14px;font-weight:500;color:#fff;opacity:.82;transition:opacity .15s,color .3s}
   .nav__links a:hover{opacity:1}
-  .nav__cta{padding:10px 20px;background:#fff;color:var(--navy-deep)!important;border-radius:2px;opacity:1!important;font-weight:600;transition:background .3s,color .3s}
+  .nav__cta{font-weight:500;opacity:.82;transition:opacity .15s,color .3s}
+  .nav__cta:hover{opacity:1}
   .lang-switch{display:flex;gap:5px;font-size:12px;font-weight:600;letter-spacing:1px;color:var(--silver-1);background:none;border:0;cursor:pointer}
   .lang-switch__opt.on{color:#fff}
   .nav--solid{background:rgba(255,255,255,.85);backdrop-filter:saturate(140%) blur(12px);border-bottom-color:rgba(11,46,79,.08)}
@@ -68,7 +69,6 @@
   .nav--solid .nav__logo span{color:var(--navy-deep)}
   .nav--solid .nav__logo .grp{color:var(--silver-accent)}
   .nav--solid .nav__links a{color:var(--ink)}
-  .nav--solid .nav__cta{background:var(--navy-deep);color:#fff!important}
   .nav--solid .lang-switch{color:var(--silver-accent)}
   .nav--solid .lang-switch__opt.on{color:var(--navy-deep)}
   .nav__toggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;z-index:2}
