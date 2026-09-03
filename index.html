@@ -432,9 +432,19 @@
     .statement__inner{padding:8px 0}
     .closure{padding:30px 24px}
   }
+
+  /* HOME v2: minimal hero — logo mark, quote payoff, citation, access buttons */
+  .hero__logo{height:56px;width:auto;filter:brightness(0) invert(1);margin:0 auto 34px;display:block}
+  .hero .citation{margin:28px auto 0;max-width:56ch;font-family:var(--serif);font-style:italic;font-size:1.15rem;line-height:1.5;color:var(--silver-2);text-shadow:0 1px 20px rgba(0,0,0,.5)}
+  .hero .citation em{font-style:italic;color:var(--silver-1)}
+  @media(max-width:560px){
+    .hero__cta{max-width:360px;margin-left:auto;margin-right:auto}
+    .hero__cta .btn{flex:1 1 calc(50% - 8px);justify-content:center;padding-left:18px;padding-right:18px}
+  }
 </style>
 </head>
 <body>
+
 
 <nav class="nav" id="nav">
   <div class="nav__inner">
@@ -443,10 +453,8 @@
     </a>
     <button class="nav__toggle" type="button" aria-label="Menu"><span></span><span></span><span></span></button>
     <ul class="nav__links">
-      <li><a href="/#chi-siamo" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+      <li><a href="/chi-siamo.html" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
       <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
-      <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
-      <li><a href="#team" data-it="Team" data-en="Team">Team</a></li>
       <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
       <li><a href="/contatti.html" class="nav__cta" data-it="Contattaci" data-en="Get in Touch">Contattaci</a></li>
       <li>
@@ -458,7 +466,7 @@
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- HERO — home is intentionally just name + payoff (motto + quote) + access buttons -->
 <section class="hero">
   <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="/hero-stars-poster.jpg">
     <source src="/hero-stars.mp4" type="video/mp4">
@@ -471,314 +479,17 @@
   </svg>
 
   <div class="container hero__inner">
-    <h1 class="fade s2" data-it-html="La forza della <em>visione</em>,<br>al servizio delle imprese" data-en-html="The Power of <em>Vision</em>,<br>at the Service of Businesses">La forza della <em>visione</em>,<br>al servizio delle imprese</h1>
+    <img class="hero__logo fade s1" src="/img/logo-lockup.png" alt="Polaris Group">
+    <h1 class="fade s2" data-it="Nessuna vetta &egrave; in discesa" data-en="No Summit Is Downhill">Nessuna vetta &egrave; in discesa</h1>
+    <p class="citation fade s3" data-it-html="&laquo;Non &egrave; perch&eacute; le cose sono difficili che non osiamo, ma &egrave; perch&eacute; non osiamo che sono difficili&raquo; &mdash; Seneca, <em>Lettere a Lucillo</em>" data-en-html="&ldquo;It is not because things are difficult that we do not dare; it is because we do not dare that they are difficult.&rdquo; &mdash; Seneca, <em>Letters to Lucilius</em>">&laquo;Non &egrave; perch&eacute; le cose sono difficili che non osiamo, ma &egrave; perch&eacute; non osiamo che sono difficili&raquo; &mdash; Seneca, <em>Lettere a Lucillo</em></p>
     <div class="hero__cta fade s4">
-      <a href="/servizi.html" class="btn btn--primary" data-it="Scopri i servizi" data-en="See our services">Scopri i servizi</a>
-      <a href="/contatti.html" class="btn btn--ghost" data-it="Contattaci &rarr;" data-en="Get in Touch &rarr;">Contattaci &rarr;</a>
-    </div>
-  </div>
-
-  <div class="marquee">
-    <span class="marquee__label" data-it="Riconosciuti dai principali fondi interprofessionali" data-en="Recognized by the leading interprofessional funds">Riconosciuti dai principali fondi interprofessionali</span>
-    <div class="marquee__viewport">
-      <div class="marquee__track">
-        <!-- Set 1 (the real list). Swap a name for a logo:
-             <span class="marquee__item"><img class="marquee__logo" src="/img/funds/fondimpresa.svg" alt="Fondimpresa"></span> -->
-        <div class="marquee__set">
-          <span class="marquee__item"><img class="marquee__logo" src="/img/funds/fondimpresa.png" alt="Fondimpresa"></span>
-          <span class="marquee__item"><img class="marquee__logo" src="/img/funds/fondolavoro.png" alt="Fondolavoro"></span>
-          <span class="marquee__item"><img class="marquee__logo" src="/img/funds/fonarcom.png" alt="Fonarcom"></span>
-          <span class="marquee__item marquee__item--fnc"><img class="marquee__fnc-icon" src="/img/funds/fondonuovecompetenze.png" alt=""><span class="marquee__fnc-text">Fondo Nuove<br>Competenze</span></span>
-          <span class="marquee__item"><img class="marquee__logo" src="/img/funds/formazienda.png" alt="Formazienda"></span>
-          <span class="marquee__item"><img class="marquee__logo" src="/img/funds/fondoprofessioni.png" alt="Fondoprofessioni"></span>
-          <span class="marquee__item"><img class="marquee__logo" src="/img/funds/fondir.png" alt="Fondir"></span>
-          <span class="marquee__item"><img class="marquee__logo" src="/img/funds/fondirigenti.png" alt="Fondirigenti"></span>
-        </div>
-        <!-- Set 2 (identical duplicate, hidden from screen readers) -->
-        <div class="marquee__set" aria-hidden="true">
-          <span class="marquee__item"><img class="marquee__logo" src="/img/funds/fondimpresa.png" alt="Fondimpresa"></span>
-          <span class="marquee__item"><img class="marquee__logo" src="/img/funds/fondolavoro.png" alt="Fondolavoro"></span>
-          <span class="marquee__item"><img class="marquee__logo" src="/img/funds/fonarcom.png" alt="Fonarcom"></span>
-          <span class="marquee__item marquee__item--fnc"><img class="marquee__fnc-icon" src="/img/funds/fondonuovecompetenze.png" alt=""><span class="marquee__fnc-text">Fondo Nuove<br>Competenze</span></span>
-          <span class="marquee__item"><img class="marquee__logo" src="/img/funds/formazienda.png" alt="Formazienda"></span>
-          <span class="marquee__item"><img class="marquee__logo" src="/img/funds/fondoprofessioni.png" alt="Fondoprofessioni"></span>
-          <span class="marquee__item"><img class="marquee__logo" src="/img/funds/fondir.png" alt="Fondir"></span>
-          <span class="marquee__item"><img class="marquee__logo" src="/img/funds/fondirigenti.png" alt="Fondirigenti"></span>
-        </div>
-      </div>
+      <a href="/chi-siamo.html" class="btn btn--ghost" data-it="Chi Siamo" data-en="About">Chi Siamo</a>
+      <a href="/servizi.html" class="btn btn--ghost" data-it="Servizi" data-en="Services">Servizi</a>
+      <a href="/lavora-con-noi.html" class="btn btn--ghost" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a>
+      <a href="/contatti.html" class="btn btn--primary" data-it="Contattaci" data-en="Get in Touch">Contattaci</a>
     </div>
   </div>
 </section>
-
-<!-- BRAND STATEMENT -->
-<section class="statement" id="chi-siamo">
-  <div class="container statement__inner reveal">
-    <img class="statement__logo" src="/img/logo-lockup.png" alt="Polaris Group">
-    <h2 data-it-html="Un riferimento solido<em>Per ogni decisione</em>" data-en-html="A Steady Reference Point<em>for Every Decision</em>">Un riferimento solido<em>Per ogni decisione</em></h2>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="section section--navy" id="servizi">
-  <div class="container">
-    <div class="section__head reveal">
-      <h2 data-it-html="I nostri <em class=&quot;hl&quot;>Servizi</em>" data-en-html="Our <em class=&quot;hl&quot;>Services</em>">I nostri <em class="hl">Servizi</em></h2>
-    </div>
-    <div class="svc-grid">
-      <a class="svc reveal" href="/servizi.html#formazione">
-        <span class="svc__num">01</span>
-        <h3 class="svc__name" data-it="Formazione" data-en="Training">Formazione</h3>
-        <div class="svc__meta">
-          <div class="svc__cta" data-it="Scopri →" data-en="Learn more →">Scopri →</div>
-        </div>
-      </a>
-      <a class="svc reveal" href="/servizi.html#invoice-trading">
-        <span class="svc__num">02</span>
-        <h3 class="svc__name" data-it="Invoice Trading" data-en="Invoice Trading">Invoice Trading</h3>
-        <div class="svc__meta">
-          <div class="svc__cta" data-it="Scopri →" data-en="Learn more →">Scopri →</div>
-        </div>
-      </a>
-      <a class="svc reveal" href="/servizi.html#advisory">
-        <span class="svc__num">03</span>
-        <h3 class="svc__name" data-it="Consulenza" data-en="Advisory">Consulenza</h3>
-        <div class="svc__meta">
-          <div class="svc__cta" data-it="Scopri →" data-en="Learn more →">Scopri →</div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- METHOD -->
-<section class="section method section--navy">
-  <div class="method__bg" aria-hidden="true">
-    <video class="method__video" autoplay muted loop playsinline poster="/img/method-bg.jpg">
-      <source src="/img/method-bg.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="container method__inner reveal">
-    <svg class="method__star" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 3 L57.5 42.5 L97 50 L57.5 57.5 L50 97 L42.5 57.5 L3 50 L42.5 42.5 Z"/></svg>
-    <h2 data-it-html="Un solo interlocutore<br><em class=&quot;hl&quot;>Una rete di specialisti dietro</em>" data-en-html="One Point of Contact<br><em class=&quot;hl&quot;>A Network of Specialists Behind</em>">Un solo interlocutore<br><em class="hl">Una rete di specialisti dietro</em></h2>
-    <a href="/contatti.html" class="btn btn--ghost" style="margin-top:48px" data-it="Scopri Come" data-en="Discover How">Scopri Come</a>
-  </div>
-</section>
-
-<!-- STATS -->
-<section class="section">
-  <div class="container">
-    <div class="section__head reveal">
-      <h2 data-it-html="I nostri <em class=&quot;hl&quot;>numeri</em>" data-en-html="Our <em class=&quot;hl&quot;>Numbers</em>">I nostri <em class="hl">numeri</em></h2>
-    </div>
-    <div class="stats reveal">
-      <div class="stat"><div class="stat__num"><span class="count" data-target="5040">0</span></div><div class="stat__label" data-it="Partecipanti formati" data-en="People trained">Partecipanti formati</div></div>
-      <div class="stat"><div class="stat__num"><span class="count" data-target="391">0</span></div><div class="stat__label" data-it="Aziende coinvolte" data-en="Companies involved">Aziende coinvolte</div></div>
-      <div class="stat"><div class="stat__num"><span class="count" data-target="10058">0</span></div><div class="stat__label" data-it="Ore di formazione erogate" data-en="Training hours delivered">Ore di formazione erogate</div></div>
-      <div class="stat"><div class="stat__num"><span class="count" data-target="1006">0</span></div><div class="stat__label" data-it="Corsi erogati" data-en="Courses delivered">Corsi erogati</div></div>
-    </div>
-    <p class="stats-note reveal" data-it="Dati 2024&ndash;2025 · piani formativi finanziati (Fondimpresa). Fonte: rendicontazione Polaris HR." data-en="2024&ndash;2025 data · funded training plans (Fondimpresa). Source: Polaris HR reporting.">Dati 2024–2025 · piani formativi finanziati (Fondimpresa). Fonte: rendicontazione Polaris HR.</p>
-  </div>
-</section>
-
-<!-- IL GRUPPO -->
-<section class="section section--navy" id="gruppo">
-  <div class="container">
-    <div class="reveal">
-      <div class="group__umbrella">
-        <video class="group__umbrella__bg" autoplay muted loop playsinline preload="auto" poster="/hero-stars-poster.jpg" aria-hidden="true">
-          <source src="/hero-stars.mp4" type="video/mp4">
-        </video>
-        <div class="group__umbrella__tint" aria-hidden="true"></div>
-        <div class="group__lockup">
-          <img src="/img/logo-mark.svg" alt="">
-          <div>
-            <div class="group__name">POLARIS <span class="grp">GROUP</span></div>
-            <div class="group__tag">Human Resources &middot; Credit and Finance</div>
-          </div>
-        </div>
-        <span class="group__pill" data-it="Crema &middot; Italia" data-en="Crema &middot; Italy">Crema &middot; Italia</span>
-      </div>
-      <div class="group__connector"></div>
-      <div class="group__node"></div>
-
-      <div class="group__grid">
-        <a class="gcard" href="/servizi.html#formazione">
-          <span class="gcard__tag" data-it="Gruppo" data-en="Group">Gruppo</span>
-          <h3 class="gcard__title">Polaris HR srl</h3>
-          <p class="gcard__body" data-it="Formazione obbligatoria, su misura e advisory direzionale per le PMI italiane." data-en="Mandatory and tailor-made training, plus strategic advisory for Italian SMEs.">Formazione obbligatoria, su misura e advisory direzionale per le PMI italiane.</p>
-          <div class="gcard__meta">
-            <span class="gcard__loc" data-it="Crema, Italia" data-en="Crema, Italy">Crema, Italia</span>
-            <span class="gcard__reg">P.IVA 01616620199</span>
-          </div>
-          <span class="gcard__cta" data-it="Scopri →" data-en="Learn more →">Scopri →</span>
-        </a>
-        <a class="gcard" href="/servizi.html#invoice-trading">
-          <span class="gcard__tag" data-it="Gruppo" data-en="Group">Gruppo</span>
-          <h3 class="gcard__title">Hazard srl</h3>
-          <p class="gcard__body" data-it="Invoice trading: cessione di fatture a investitori qualificati su piattaforme regolamentate." data-en="Invoice trading: sale of invoices to qualified investors on regulated platforms.">Invoice trading: cessione di fatture a investitori qualificati su piattaforme regolamentate.</p>
-          <div class="gcard__meta">
-            <span class="gcard__loc" data-it="Italia" data-en="Italy">Italia</span>
-            <span class="gcard__reg" data-it="Società del Gruppo" data-en="Group company">Società del Gruppo</span>
-          </div>
-          <span class="gcard__cta" data-it="Scopri →" data-en="Learn more →">Scopri →</span>
-        </a>
-        <a class="gcard gcard--partner" href="https://runcapital.partners" target="_blank" rel="noopener">
-          <span class="gcard__tag">Partner</span>
-          <h3 class="gcard__title">Run Capital Partners</h3>
-          <p class="gcard__body" data-it="Strutturazione di fondi alternativi, securitization e gestione patrimoniale." data-en="Alternative fund structuring, securitization, and wealth management.">Strutturazione di fondi alternativi, securitization e gestione patrimoniale.</p>
-          <div class="gcard__meta">
-            <span class="gcard__loc">Luxembourg</span>
-            <span class="gcard__reg" data-it="Partnership strategica" data-en="Strategic partnership">Partnership strategica</span>
-          </div>
-          <span class="gcard__cta" data-it="Visita &nearr;" data-en="Visit &nearr;">Visita ↗</span>
-        </a>
-        <a class="gcard gcard--partner" href="https://3dots.com" target="_blank" rel="noopener">
-          <span class="gcard__tag">Partner</span>
-          <h3 class="gcard__title">3DOTS Capital</h3>
-          <p class="gcard__body" data-it="Advisory per la quotazione su Nasdaq di società del Sud Europa." data-en="Nasdaq listing advisory for Southern European companies.">Advisory per la quotazione su Nasdaq di società del Sud Europa.</p>
-          <div class="gcard__meta">
-            <span class="gcard__loc">New York</span>
-            <span class="gcard__reg" data-it="Spin Off" data-en="Spin Off">Spin Off</span>
-          </div>
-          <span class="gcard__cta" data-it="Visita &nearr;" data-en="Visit &nearr;">Visita ↗</span>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- TEAM -->
-<section class="section" id="team">
-  <div class="container">
-    <div class="section__head reveal">
-      <h2 data-it-html="Conosci il <em class=&quot;hl&quot;>team</em>" data-en-html="Meet the <em class=&quot;hl&quot;>Team</em>">Conosci il <em class="hl">team</em></h2>
-    </div>
-    <div class="team-groups team-collapse reveal" id="teamCollapse">
-      <!-- Leadership -->
-      <div class="team-group">
-        <div class="team-group__head">
-          <span class="team-group__eyebrow" data-it="Leadership" data-en="Leadership">Leadership</span>
-        </div>
-        <div class="team-grid">
-          <a href="/team/cesare-trebeschi.html" class="team-card team-card--lead"><div class="team-card__photo"><img src="/img/cesare-trebeschi.jpg" alt="Cesare Trebeschi"></div><div class="team-card__name">Cesare Trebeschi</div><div class="team-card__role" data-it="CEO &amp; Fondatore" data-en="CEO &amp; Founder">CEO &amp; Fondatore</div></a>
-        </div>
-      </div>
-      <!-- Area Formazione -->
-      <div class="team-group">
-        <div class="team-group__head">
-          <span class="team-group__eyebrow" data-it="Area Formazione" data-en="Training">Area Formazione</span>
-        </div>
-        <div class="team-grid">
-          <a href="/team/mara.html" class="team-card"><div class="team-card__photo"><img src="/img/team/mara.jpg" alt="Mara Carioni" style="object-position:center 16%"></div><div class="team-card__name">Mara Carioni</div><div class="team-card__role" data-it="Responsabile Formazione" data-en="Head of Training">Responsabile Formazione</div></a>
-          <a href="/team/paola.html" class="team-card"><div class="team-card__photo"><img src="/img/team/paola.jpg" alt="Paola Franzoni" style="object-position:center 20%"></div><div class="team-card__name">Paola Franzoni</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
-          <a href="/team/andrea.html" class="team-card"><div class="team-card__photo"><img src="/img/team/andrea.jpg" alt="Andrea Ungaro" style="object-position:center 20%"></div><div class="team-card__name">Andrea Ungaro</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
-          <a href="/team/giovanni.html" class="team-card"><div class="team-card__photo"><img src="/img/team/giovanni.jpg" alt="Giovanni Di Genio" style="object-position:center 18%"></div><div class="team-card__name">Giovanni Di Genio</div><div class="team-card__role" data-it="Collaboratore Senior" data-en="Senior Collaborator">Collaboratore Senior</div></a>
-          <a href="/team/silvia.html" class="team-card"><div class="team-card__photo">S</div><div class="team-card__name">Silvia Ungaro</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
-          <a href="/team/roberto.html" class="team-card"><div class="team-card__photo">R</div><div class="team-card__name">Roberto James Aloi</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
-          <a href="/team/carole.html" class="team-card"><div class="team-card__photo">C</div><div class="team-card__name">Carole Conti</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
-          <a href="/team/roberta.html" class="team-card"><div class="team-card__photo"><img src="/img/team/roberta.jpg" alt="Roberta Tagliani" style="object-position:center 18%"></div><div class="team-card__name">Roberta Tagliani</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
-          <a href="/team/francesca.html" class="team-card"><div class="team-card__photo">F</div><div class="team-card__name">Francesca Rossini</div><div class="team-card__role" data-it="Junior Partner" data-en="Junior Partner">Junior Partner</div></a>
-          <a href="/team/lavinia.html" class="team-card"><div class="team-card__photo"><img src="/img/team/lavinia.jpg" alt="Lavinia Di Genio" style="object-position:center 8%"></div><div class="team-card__name">Lavinia Di Genio</div><div class="team-card__role" data-it="Collaboratrice Junior" data-en="Junior Collaborator">Collaboratrice Junior</div></a>
-        </div>
-      </div>
-      <!-- Area Economico-Finanziaria (Cristina folded in) -->
-      <div class="team-group team-group--extra">
-        <div class="team-group__head">
-          <span class="team-group__eyebrow" data-it="Area Economico-Finanziaria" data-en="Finance &amp; Control">Area Economico-Finanziaria</span>
-        </div>
-        <div class="team-grid">
-          <a href="/team/alessio.html" class="team-card"><div class="team-card__photo"><img src="/img/team/alessio.jpg" alt="Alessio Di Cesare" style="object-position:center 16%"></div><div class="team-card__name">Alessio Di Cesare</div><div class="team-card__role" data-it="Responsabile Amministrativo" data-en="Head of Administration">Responsabile Amministrativo</div></a>
-          <a href="/team/gianmaria.html" class="team-card"><div class="team-card__photo">G</div><div class="team-card__name">Gianmaria Bassani</div><div class="team-card__role" data-it="Amministrazione" data-en="Administration">Amministrazione</div></a>
-          <a href="/team/cristina.html" class="team-card"><div class="team-card__photo"><img src="/img/team/cristina.jpg" alt="Cristina Milanesi" style="object-position:center 26%"></div><div class="team-card__name">Cristina Milanesi</div><div class="team-card__role" data-it="Front &amp; Back Office" data-en="Front &amp; Back Office">Front &amp; Back Office</div></a>
-        </div>
-      </div>
-    </div>
-    <div class="text-center" style="margin-top:var(--sp-8)">
-      <button type="button" class="btn btn--ghost" id="teamMore" data-it="Conosci tutto il team" data-en="Meet the full team">Conosci tutto il team</button>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section class="section section--navy" id="testimonials" style="padding-top:0">
-  <div class="container">
-    <hr style="border:0;border-top:1px solid rgba(127,168,220,.22);max-width:1100px;margin:0 auto 80px">
-    <div class="section__head reveal">
-      <h2 data-it-html="Cosa dicono i <em class=&quot;hl&quot;>clienti di noi</em>" data-en-html="What <em class=&quot;hl&quot;>Clients Say About Us</em>">Cosa dicono i <em class="hl">clienti di noi</em></h2>
-    </div>
-    <div class="quote-grid reveal">
-      <article class="qcard">
-        <span class="qcard__mk" aria-hidden="true">&ldquo;</span>
-        <p class="qcard__q" data-it="Avevamo bisogno di formare le maestranze sulla sicurezza senza fermare la produzione. Polaris ha costruito un piano finanziato su misura: corsi in azienda, zero costi vivi e certificazioni in regola in poche settimane." data-en="We needed to train our floor staff on safety without stopping production. Polaris built a tailored funded plan: on-site courses, no out-of-pocket cost and compliant certifications within a few weeks.">Avevamo bisogno di formare le maestranze sulla sicurezza senza fermare la produzione. Polaris ha costruito un piano finanziato su misura: corsi in azienda, zero costi vivi e certificazioni in regola in poche settimane.</p>
-        <div class="qcard__a" data-it="(Marco Bianchi), Direzione · PMI manifatturiera, Lombardia" data-en="(Marco Bianchi), Management · SME manufacturer, Lombardy">(Marco Bianchi), Direzione · PMI manifatturiera, Lombardia</div>
-      </article>
-      <article class="qcard">
-        <span class="qcard__mk" aria-hidden="true">&ldquo;</span>
-        <p class="qcard__q" data-it="Indirizzo a Polaris i clienti che hanno bisogno di liquidità o di finanza agevolata. Parlano la lingua dell'impresa e mi restituiscono un cliente più solido e ben seguito." data-en="I refer to Polaris the clients who need liquidity or subsidized finance. They speak the language of business and hand the client back to me stronger and well looked after.">Indirizzo a Polaris i clienti che hanno bisogno di liquidità o di finanza agevolata. Parlano la lingua dell'impresa e mi restituiscono un cliente più solido e ben seguito.</p>
-        <div class="qcard__a" data-it="(Elena Ferrari), Commercialista · Studio associato" data-en="(Elena Ferrari), Accountant · Associate firm">(Elena Ferrari), Commercialista · Studio associato</div>
-      </article>
-      <article class="qcard">
-        <span class="qcard__mk" aria-hidden="true">&ldquo;</span>
-        <p class="qcard__q" data-it="Dalla mappatura dei fabbisogni al rendiconto finale hanno gestito tutto loro. Abbiamo formato decine di persone con i fondi interprofessionali, senza appesantire il mio ufficio." data-en="From mapping our needs to the final reporting, they handled everything. We trained dozens of people through interprofessional funds, without adding load to my team.">Dalla mappatura dei fabbisogni al rendiconto finale hanno gestito tutto loro. Abbiamo formato decine di persone con i fondi interprofessionali, senza appesantire il mio ufficio.</p>
-        <div class="qcard__a" data-it="(Luca Verdi), Responsabile HR · Gruppo industriale" data-en="(Luca Verdi), HR Lead · Industrial group">(Luca Verdi), Responsabile HR · Gruppo industriale</div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- IN COSA CREDIAMO (folded from Chi Siamo) -->
-<section class="section section--cream">
-  <div class="container">
-    <figure class="belief-quote reveal">
-      <span class="belief-quote__mk" aria-hidden="true">&ldquo;</span>
-      <blockquote data-it-html="Crediamo che le imprese debbano passare da una logica di breve periodo a una di lungo periodo: restare nel mercato il più a lungo possibile, <em>lasciando le cose meglio di come le hanno trovate.</em>" data-en-html="We believe companies should move from short-term thinking to the long term: staying in the market as long as possible, <em>leaving things better than they found them.</em>">Crediamo che le imprese debbano passare da una logica di breve periodo a una di lungo periodo: restare nel mercato il più a lungo possibile, <em>lasciando le cose meglio di come le hanno trovate.</em></blockquote>
-      <figcaption class="belief-quote__by">Cesare Trebeschi</figcaption>
-    </figure>
-  </div>
-</section>
-
-<!-- SUMMER CLOSURE NOTICE (seasonal — safe to remove after August 2026) -->
-<style>
-  .closure{margin:0 auto;display:flex;gap:44px;align-items:center;background:linear-gradient(160deg,#fbfaf6,#f2efe8);border:1px solid var(--silver-2);border-radius:18px;padding:58px 64px;box-shadow:0 34px 74px -38px rgba(11,46,79,.34)}
-  .closure__icon{flex:0 0 104px;width:104px;height:104px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#fdf3d6,#f6e2a6);border:1px solid rgba(199,161,58,.35);color:#c7a13a}
-  .closure__icon svg{width:56px;height:56px}
-  .closure__eyebrow{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--silver-accent)}
-  .closure__title{font-family:var(--serif);font-weight:600;font-size:clamp(2.1rem,3.4vw,3rem);color:var(--navy-deep);margin:12px 0 16px;line-height:1.1}
-  .closure__text{font-size:clamp(1.08rem,1.5vw,1.35rem);color:var(--ink);opacity:.88;line-height:1.6;margin:0}
-  .closure__text strong{color:var(--navy-deep)}
-  @media(max-width:900px){.closure{gap:32px;padding:44px 40px}.closure__icon{flex:0 0 84px;width:84px;height:84px}.closure__icon svg{width:46px;height:46px}}
-  @media(max-width:560px){.closure{flex-direction:column;text-align:center;gap:24px;padding:36px 26px}.closure__icon{margin:0 auto}}
-</style>
-<section class="section" style="padding-bottom:0">
-  <div class="container">
-    <div class="closure reveal" role="note">
-      <div class="closure__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-      </div>
-      <div class="closure__body">
-        <span class="closure__eyebrow" data-it="Avviso" data-en="Notice">Avviso</span>
-        <h3 class="closure__title" data-it="Chiusura estiva" data-en="Summer Closure">Chiusura estiva</h3>
-        <p class="closure__text" data-it-html="I nostri uffici resteranno chiusi per le ferie estive <strong>dal 10 al 21 agosto 2026</strong> compresi. Saremo nuovamente operativi <strong>il 24 agosto 2026</strong>." data-en-html="Our offices will be closed for the summer holidays <strong>from 10 to 21 August 2026</strong> inclusive. We will be back in operation <strong>on 24 August 2026</strong>.">I nostri uffici resteranno chiusi per le ferie estive <strong>dal 10 al 21 agosto 2026</strong> compresi. Saremo nuovamente operativi <strong>il 24 agosto 2026</strong>.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="section" id="contatti">
-  <div class="container container--narrow text-center reveal">
-    <div class="git">
-      <h2 class="git__title" data-it="Contattaci" data-en="Get in Touch">Contattaci</h2>
-      <div class="git__box">
-        <span class="git__email">info@polaris-group.it</span>
-        <button class="git__copy" type="button" data-copy="info@polaris-group.it">COPY</button>
-      </div>
-      <a class="git__cta" href="mailto:info@polaris-group.it" data-it-html="Apri nella tua mail &rarr;" data-en-html="Open in email app &rarr;">Apri nella tua mail →</a>
-    </div>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer__inner">
@@ -789,10 +500,8 @@
     <div class="footer__col">
       <h4 data-it="Sito" data-en="Site">Sito</h4>
       <ul>
-        <li><a href="/#chi-siamo" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
+        <li><a href="/chi-siamo.html" data-it="Chi Siamo" data-en="About">Chi Siamo</a></li>
         <li><a href="/servizi.html" data-it="Servizi" data-en="Services">Servizi</a></li>
-        <li><a href="/numeri.html" data-it="Progetti" data-en="Projects">Progetti</a></li>
-        <li><a href="/#team" data-it="Team" data-en="Team">Team</a></li>
         <li><a href="/lavora-con-noi.html" data-it="Lavora con noi" data-en="Careers">Lavora con noi</a></li>
       </ul>
     </div>
@@ -823,7 +532,10 @@
 <script>
 (function(){
   var nav=document.getElementById('nav');
-  function onScroll(){ if(window.scrollY>window.innerHeight*0.82){nav.classList.add('nav--solid');}else{nav.classList.remove('nav--solid');} }
+  /* the hero content is vertically centered, so any scroll at all slides it up under
+     the fixed nav — go solid almost immediately rather than waiting on a scroll-depth
+     fraction (the old long homepage could afford to wait; this short one can't). */
+  function onScroll(){ if(window.scrollY>40){nav.classList.add('nav--solid');}else{nav.classList.remove('nav--solid');} }
   window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
   var navToggle=document.querySelector('.nav__toggle');
   if(navToggle) navToggle.addEventListener('click',function(){ nav.classList.toggle('open'); });
@@ -841,86 +553,6 @@
 
   var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
-
-  function countUp(el){var target=+el.dataset.target,dur=1600,t0=null;function step(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1);el.textContent=Math.round((1-Math.pow(1-p,3))*target).toLocaleString('it-IT',{useGrouping:'always'});if(p<1)requestAnimationFrame(step);}requestAnimationFrame(step);}
-  var cio=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){countUp(e.target);cio.unobserve(e.target);}});},{threshold:.6});
-  document.querySelectorAll('.count').forEach(function(el){cio.observe(el);});
-
-  // Meet the Team: "Learn more" expands the full team inline (no navigation)
-  var teamMore=document.getElementById('teamMore'), teamCollapse=document.getElementById('teamCollapse');
-  if(teamMore&&teamCollapse){
-    teamMore.addEventListener('click',function(){
-      teamCollapse.classList.add('is-open');
-      teamMore.style.display='none';
-    });
-  }
-
-  // copy-to-clipboard for .git__copy buttons
-  document.querySelectorAll('.git__copy').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var v = btn.getAttribute('data-copy') || (btn.previousElementSibling ? btn.previousElementSibling.textContent.trim() : '');
-      if(!v) return;
-      var done = function(){
-        var l = (function(){try{return localStorage.getItem('polaris-lang')==='en'?'en':'it'}catch(e){return 'it'}})();
-        var labels = { it:{copy:'Copia',copied:'Copiato'}, en:{copy:'Copy',copied:'Copied'} };
-        btn.textContent = labels[l].copied; btn.classList.add('copied');
-        setTimeout(function(){ btn.textContent = labels[l].copy; btn.classList.remove('copied'); }, 1800);
-      };
-      if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(v).then(done).catch(function(){}); }
-      else { var t=document.createElement('textarea'); t.value=v; document.body.appendChild(t); t.select(); try{document.execCommand('copy'); done();}catch(e){} document.body.removeChild(t); }
-    });
-  });
-})();
-</script>
-
-<script>
-/* Testimonial card stack, vanilla port of the Framer Motion component.
-   Placeholder testimonials, clearly marked "in raccolta"; swap with real,
-   authorized client quotes (it/en) in the data[] array below before launch. */
-(function(){
-  var stack=document.getElementById('tstack'); if(!stack) return;
-  var data=[
-    {initials:'PM',
-      it:{q:'«Testimonianza in arrivo, un risultato concreto ottenuto con Polaris, in una o due frasi.»',a:'Direzione, PMI manifatturiera',t:'Lombardia · in raccolta'},
-      en:{q:'“Testimonial coming, a concrete result achieved with Polaris, in a sentence or two.”',a:'Management, SME manufacturer',t:'Lombardy · being collected'}},
-    {initials:'SA',
-      it:{q:'«Testimonianza in arrivo, l’esperienza di lavoro con il team Polaris.»',a:'Titolare, azienda di servizi',t:'in raccolta'},
-      en:{q:'“Testimonial coming, what working with the Polaris team was like.”',a:'Owner, services company',t:'being collected'}},
-    {initials:'SC',
-      it:{q:'«Testimonianza in arrivo, il punto di vista di un commercialista che ci invia i propri clienti.»',a:'Commercialista, studio associato',t:'canale di referral · in raccolta'},
-      en:{q:'“Testimonial coming, the view of an accountant who refers their clients to us.”',a:'Accountant, associate firm',t:'referral channel · being collected'}},
-    {initials:'GI',
-      it:{q:'«Testimonianza in arrivo, un percorso di formazione finanziata, dal bisogno al risultato.»',a:'Responsabile HR, gruppo industriale',t:'in raccolta'},
-      en:{q:'“Testimonial coming, a funded training program, from need to result.”',a:'HR Lead, industrial group',t:'being collected'}}
-  ];
-  function lang(){ try{return localStorage.getItem('polaris-lang')==='en'?'en':'it';}catch(e){return 'it';} }
-  var order=data.map(function(_,i){return i;});
-  function render(){
-    var L=lang(); stack.innerHTML='';
-    order.forEach(function(di,posRaw){
-      var pos=Math.min(posRaw,3), t=data[di][L];
-      var c=document.createElement('article'); c.className='tcard'; c.setAttribute('data-pos',pos);
-      c.innerHTML='<div class="tcard__avatar" aria-hidden="true">'+data[di].initials+'</div>'+
-        '<p class="tcard__quote">'+t.q+'</p>'+
-        '<div><div class="tcard__author">'+t.a+'</div><div class="tcard__tag">'+t.t+'</div></div>';
-      if(pos===0) drag(c);
-      stack.appendChild(c);
-    });
-  }
-  function shuffle(){ order.push(order.shift()); render(); }
-  function unshuffle(){ order.unshift(order.pop()); render(); }
-  function drag(card){
-    var sx=0,cur=0,on=false;
-    card.addEventListener('pointerdown',function(e){on=true;sx=e.clientX;cur=0;card.classList.add('dragging');card.setPointerCapture(e.pointerId);});
-    card.addEventListener('pointermove',function(e){if(!on)return;cur=e.clientX-sx;card.style.transform='translateX('+cur+'px) rotate('+(-6+cur*0.03)+'deg)';});
-    function end(){if(!on)return;on=false;card.classList.remove('dragging');card.style.transform='';if(cur<-150)shuffle();}
-    card.addEventListener('pointerup',end);card.addEventListener('pointercancel',end);card.addEventListener('lostpointercapture',end);
-    card.addEventListener('click',function(){if(Math.abs(cur)<6)shuffle();});
-  }
-  var nx=document.getElementById('tnext'),pv=document.getElementById('tprev');
-  if(nx)nx.addEventListener('click',shuffle); if(pv)pv.addEventListener('click',unshuffle);
-  document.querySelectorAll('.lang-switch__opt').forEach(function(o){o.addEventListener('click',function(){setTimeout(render,0);});});
-  render();
 })();
 </script>
 </body>
