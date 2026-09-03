@@ -65,10 +65,10 @@
       '    <h3 id="contactModalTitle" class="contact-modal__title" data-it="Get in Touch" data-en="Get in Touch">Get in Touch</h3>'+
       '    <p class="contact-modal__sub" data-it="Scrivici una mail all\'indirizzo qui sotto. Rispondiamo entro un giorno lavorativo." data-en="Send us a message at the address below. We reply within one business day.">Send us a message at the address below. We reply within one business day.</p>'+
       '    <div class="git__box">'+
-      '      <span class="git__email">info@polaris-group.it</span>'+
-      '      <button class="git__copy" type="button" data-copy="info@polaris-group.it">COPY</button>'+
+      '      <span class="git__email">segreteria@polaris-group.it</span>'+
+      '      <button class="git__copy" type="button" data-copy="segreteria@polaris-group.it">COPY</button>'+
       '    </div>'+
-      '    <a class="git__cta" href="mailto:info@polaris-group.it" data-it-html="Apri nella tua mail &rarr;" data-en-html="Open in email app &rarr;">Open in email app &rarr;</a>'+
+      '    <a class="git__cta" href="mailto:segreteria@polaris-group.it" data-it-html="Apri nella tua mail &rarr;" data-en-html="Open in email app &rarr;">Open in email app &rarr;</a>'+
       '    <button class="contact-modal__close" type="button" data-close-contact data-it="Chiudi" data-en="Close">Chiudi</button>'+
       '  </div>'+
       '</div>';
@@ -86,7 +86,7 @@
     var m = document.getElementById('contactModal');
     if(!m) return;
     // Always reset to defaults first, then apply per-trigger overrides
-    var defaults = { eyebrow:'Contact Us', eyebrowIt:'Contattaci', title:'Get in Touch', titleIt:'Get in Touch', email:'info@polaris-group.it' };
+    var defaults = { eyebrow:'Contact Us', eyebrowIt:'Contattaci', title:'Get in Touch', titleIt:'Get in Touch', email:'segreteria@polaris-group.it' };
     var l = lang();
     var eyebrowEl = m.querySelector('.contact-modal__eyebrow');
     var titleEl = m.querySelector('.contact-modal__title');
