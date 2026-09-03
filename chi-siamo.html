@@ -73,6 +73,38 @@
     .team-groups .team-grid{gap:32px 12px}
     .team-groups .team-card{width:calc(50% - 6px);flex:0 0 calc(50% - 6px)}
   }
+
+  /* ORG CHART */
+  .orgchart-scroll{overflow-x:auto;padding:8px 32px 16px}
+  .orgchart{display:flex;justify-content:center;min-width:max-content;margin:0 auto}
+  .orgchart, .orgchart ul{list-style:none}
+  .orgchart ul{display:flex;padding-top:32px;position:relative}
+  .orgchart li{position:relative;padding:32px 16px 0;display:flex;flex-direction:column;align-items:center}
+  .orgchart li::before,.orgchart li::after{content:"";position:absolute;top:0;right:50%;border-top:1px solid var(--silver-1);width:50%;height:32px}
+  .orgchart li::after{right:auto;left:50%;border-left:1px solid var(--silver-1)}
+  .orgchart li:only-child{padding-top:0}
+  .orgchart li:only-child::before,.orgchart li:only-child::after{display:none}
+  .orgchart li:first-child::before,.orgchart li:last-child::after{border:0 none}
+  .orgchart li:last-child::before{border-right:1px solid var(--silver-1);border-radius:0 6px 0 0}
+  .orgchart li:first-child::after{border-radius:6px 0 0 0}
+  .orgchart ul ul::before{content:"";position:absolute;top:0;left:50%;border-left:1px solid var(--silver-1);width:0;height:32px}
+  .oc-lead{display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:inherit}
+  .oc-lead__photo{width:88px;height:88px;border-radius:50%;overflow:hidden;margin-bottom:10px;background:var(--navy-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.9rem;font-weight:500;box-shadow:0 0 0 1px var(--silver-1),0 0 0 5px var(--white),0 0 0 6px var(--silver-2)}
+  .oc-lead__photo img{width:100%;height:100%;object-fit:cover}
+  .oc-lead__name{font-family:var(--serif);font-size:1.08rem;color:var(--ink)}
+  .oc-lead__role{font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--silver-accent);margin-top:2px}
+  .oc-box--area{display:inline-block;padding:10px 18px;border-radius:5px;background:var(--steel);color:#fff;font-family:var(--sans);font-size:.8rem;font-weight:700;white-space:nowrap}
+  .oc-stack{margin-top:28px;padding-left:20px;position:relative;text-align:left}
+  .oc-stack::before{content:"";position:absolute;left:0;top:0;bottom:20px;border-left:1px solid var(--silver-1)}
+  .oc-stack__item{position:relative;margin-bottom:16px}
+  .oc-stack__item:last-child{margin-bottom:0}
+  .oc-stack__item::before{content:"";position:absolute;left:-20px;top:22px;width:20px;border-top:1px solid var(--silver-1)}
+  .oc-person-card{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+  .oc-person-card__photo{width:48px;height:48px;flex:0 0 48px;border-radius:50%;overflow:hidden;background:var(--navy-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.1rem;font-weight:500;box-shadow:0 0 0 1px var(--silver-1),0 0 0 3px var(--white),0 0 0 4px var(--silver-2);transition:transform .2s var(--ease)}
+  .oc-person-card__photo img{width:100%;height:100%;object-fit:cover}
+  a.oc-person-card:hover .oc-person-card__photo{transform:translateY(-2px)}
+  .oc-person-card__name{display:block;font-family:var(--serif);font-size:.92rem;color:var(--ink);line-height:1.25}
+  .oc-person-card__role{display:block;font-size:.64rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--silver-accent);margin-top:1px}
 </style>
 </head>
 <body>
@@ -180,45 +212,56 @@
       <div class="section__head reveal">
         <h2 data-it-html="Conosci il <em class=&quot;hl&quot;>team</em>" data-en-html="Meet the <em class=&quot;hl&quot;>Team</em>">Conosci il <em class="hl">team</em></h2>
       </div>
-      <div class="team-groups team-collapse reveal" id="teamCollapse">
-        <div class="team-group">
-          <div class="team-group__head">
-            <span class="team-group__eyebrow" data-it="Leadership" data-en="Leadership">Leadership</span>
-          </div>
-          <div class="team-grid">
-            <a href="/team/cesare-trebeschi.html" class="team-card team-card--lead"><div class="team-card__photo"><img src="/img/cesare-trebeschi.jpg" alt="Cesare Trebeschi"></div><div class="team-card__name">Cesare Trebeschi</div><div class="team-card__role" data-it="CEO &amp; Fondatore" data-en="CEO &amp; Founder">CEO &amp; Fondatore</div></a>
-          </div>
-        </div>
-        <div class="team-group">
-          <div class="team-group__head">
-            <span class="team-group__eyebrow" data-it="Area Formazione" data-en="Training">Area Formazione</span>
-          </div>
-          <div class="team-grid">
-            <a href="/team/mara.html" class="team-card"><div class="team-card__photo"><img src="/img/team/mara.jpg" alt="Mara Carioni" style="object-position:center 16%"></div><div class="team-card__name">Mara Carioni</div><div class="team-card__role" data-it="Responsabile Formazione" data-en="Head of Training">Responsabile Formazione</div></a>
-            <a href="/team/paola.html" class="team-card"><div class="team-card__photo"><img src="/img/team/paola.jpg" alt="Paola Franzoni" style="object-position:center 20%"></div><div class="team-card__name">Paola Franzoni</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
-            <a href="/team/andrea.html" class="team-card"><div class="team-card__photo"><img src="/img/team/andrea.jpg" alt="Andrea Ungaro" style="object-position:center 20%"></div><div class="team-card__name">Andrea Ungaro</div><div class="team-card__role" data-it="Formazione" data-en="Training">Formazione</div></a>
-            <a href="/team/giovanni.html" class="team-card"><div class="team-card__photo"><img src="/img/team/giovanni.jpg" alt="Giovanni Di Genio" style="object-position:center 18%"></div><div class="team-card__name">Giovanni Di Genio</div><div class="team-card__role" data-it="Collaboratore Senior" data-en="Senior Collaborator">Collaboratore Senior</div></a>
-            <a href="/team/silvia.html" class="team-card"><div class="team-card__photo">S</div><div class="team-card__name">Silvia Ungaro</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
-            <a href="/team/roberto.html" class="team-card"><div class="team-card__photo">R</div><div class="team-card__name">Roberto James Aloi</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
-            <a href="/team/carole.html" class="team-card"><div class="team-card__photo">C</div><div class="team-card__name">Carole Conti</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
-            <a href="/team/roberta.html" class="team-card"><div class="team-card__photo"><img src="/img/team/roberta.jpg" alt="Roberta Tagliani" style="object-position:center 18%"></div><div class="team-card__name">Roberta Tagliani</div><div class="team-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</div></a>
-            <a href="/team/francesca.html" class="team-card"><div class="team-card__photo">F</div><div class="team-card__name">Francesca Rossini</div><div class="team-card__role" data-it="Junior Partner" data-en="Junior Partner">Junior Partner</div></a>
-            <a href="/team/lavinia.html" class="team-card"><div class="team-card__photo"><img src="/img/team/lavinia.jpg" alt="Lavinia Di Genio" style="object-position:center 8%"></div><div class="team-card__name">Lavinia Di Genio</div><div class="team-card__role" data-it="Collaboratrice Junior" data-en="Junior Collaborator">Collaboratrice Junior</div></a>
-          </div>
-        </div>
-        <div class="team-group team-group--extra">
-          <div class="team-group__head">
-            <span class="team-group__eyebrow" data-it="Area Economico-Finanziaria" data-en="Finance &amp; Control">Area Economico-Finanziaria</span>
-          </div>
-          <div class="team-grid">
-            <a href="/team/alessio.html" class="team-card"><div class="team-card__photo"><img src="/img/team/alessio.jpg" alt="Alessio Di Cesare" style="object-position:center 16%"></div><div class="team-card__name">Alessio Di Cesare</div><div class="team-card__role" data-it="Responsabile Amministrativo" data-en="Head of Administration">Responsabile Amministrativo</div></a>
-            <a href="/team/gianmaria.html" class="team-card"><div class="team-card__photo">G</div><div class="team-card__name">Gianmaria Bassani</div><div class="team-card__role" data-it="Amministrazione" data-en="Administration">Amministrazione</div></a>
-            <a href="/team/cristina.html" class="team-card"><div class="team-card__photo"><img src="/img/team/cristina.jpg" alt="Cristina Milanesi" style="object-position:center 26%"></div><div class="team-card__name">Cristina Milanesi</div><div class="team-card__role" data-it="Front &amp; Back Office" data-en="Front &amp; Back Office">Front &amp; Back Office</div></a>
-          </div>
-        </div>
-      </div>
-      <div class="text-center" style="margin-top:var(--sp-8)">
-        <button type="button" class="btn btn--ghost" id="teamMore" data-it="Conosci tutto il team" data-en="Meet the full team">Conosci tutto il team</button>
+      <!-- Org chart per client, 2026-09-04: literal box/line format, same tree as formazione.html -->
+      <div class="orgchart-scroll reveal">
+        <ul class="orgchart">
+          <li>
+            <a href="/team/cesare-trebeschi.html" class="oc-lead"><span class="oc-lead__photo"><img src="/img/cesare-trebeschi.jpg" alt="Cesare Trebeschi"></span><span class="oc-lead__name">Cesare Trebeschi</span><span class="oc-lead__role" data-it="CEO e Fondatore" data-en="CEO and Founder">CEO e Fondatore</span></a>
+            <ul>
+              <li>
+                <a href="/team/mara.html" class="oc-lead"><span class="oc-lead__photo"><img src="/img/team/mara.jpg" alt="Mara Carioni" style="object-position:center 16%"></span><span class="oc-lead__name">Mara Carioni</span><span class="oc-lead__role" data-it="Responsabile Area Formazione" data-en="Head of Training Area">Responsabile Area Formazione</span></a>
+                <ul>
+                  <li>
+                    <div class="oc-box--area" data-it="Area Progettazione" data-en="Design Area">Area Progettazione</div>
+                    <div class="oc-stack">
+                      <div class="oc-stack__item"><a href="/team/paola.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/paola.jpg" alt="Paola Franzoni" style="object-position:center 20%"></span><span><span class="oc-person-card__name">Paola Franzoni</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/roberto.html" class="oc-person-card"><span class="oc-person-card__photo">R</span><span><span class="oc-person-card__name">Roberto James Aloi</span><span class="oc-person-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/giovanni.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/giovanni.jpg" alt="Giovanni Di Genio" style="object-position:center 18%"></span><span><span class="oc-person-card__name">Giovanni Di Genio</span><span class="oc-person-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/carole.html" class="oc-person-card"><span class="oc-person-card__photo">C</span><span><span class="oc-person-card__name">Carole Conti</span><span class="oc-person-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</span></span></a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="oc-box--area" data-it="Area Gestione" data-en="Management Area">Area Gestione</div>
+                    <div class="oc-stack">
+                      <div class="oc-stack__item"><a href="/team/paola.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/paola.jpg" alt="Paola Franzoni" style="object-position:center 20%"></span><span><span class="oc-person-card__name">Paola Franzoni</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/andrea.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/andrea.jpg" alt="Andrea Ungaro" style="object-position:center 20%"></span><span><span class="oc-person-card__name">Andrea Ungaro</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/cristina.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/cristina.jpg" alt="Cristina Milanesi" style="object-position:center 26%"></span><span><span class="oc-person-card__name">Cristina Milanesi</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/lavinia.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/lavinia.jpg" alt="Lavinia Di Genio" style="object-position:center 8%"></span><span><span class="oc-person-card__name">Lavinia Di Genio</span><span class="oc-person-card__role" data-it="Junior Partner" data-en="Junior Partner">Junior Partner</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/francesca.html" class="oc-person-card"><span class="oc-person-card__photo">F</span><span><span class="oc-person-card__name">Francesca Rossini</span><span class="oc-person-card__role" data-it="Junior Partner" data-en="Junior Partner">Junior Partner</span></span></a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="oc-box--area" data-it="Area Rendicontazione" data-en="Reporting Area">Area Rendicontazione</div>
+                    <div class="oc-stack">
+                      <div class="oc-stack__item"><a href="/team/mara.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/mara.jpg" alt="Mara Carioni" style="object-position:center 16%"></span><span><span class="oc-person-card__name">Mara Carioni</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/alessio.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/alessio.jpg" alt="Alessio Di Cesare" style="object-position:center 16%"></span><span><span class="oc-person-card__name">Alessio Di Cesare</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/silvia.html" class="oc-person-card"><span class="oc-person-card__photo">S</span><span><span class="oc-person-card__name">Silvia Ungaro</span><span class="oc-person-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/gianmaria.html" class="oc-person-card"><span class="oc-person-card__photo">G</span><span><span class="oc-person-card__name">Gianmaria Bassani</span></span></a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="oc-box--area" data-it="Compliance" data-en="Compliance">Compliance</div>
+                    <div class="oc-stack">
+                      <!-- CLIENT NOTE: Merli Simone has no existing bio page or photo in the repo — added as a plain, non-linking card, not fabricated a profile -->
+                      <div class="oc-stack__item"><span class="oc-person-card"><span class="oc-person-card__photo">M</span><span><span class="oc-person-card__name">Merli Simone</span></span></span></div>
+                      <div class="oc-stack__item"><a href="/team/roberta.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/roberta.jpg" alt="Roberta Tagliani" style="object-position:center 18%"></span><span><span class="oc-person-card__name">Roberta Tagliani</span><span class="oc-person-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</span></span></a></div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </section>

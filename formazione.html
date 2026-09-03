@@ -46,7 +46,7 @@
   @media(max-width:860px){ .team-groups .team-grid{gap:32px 12px} .team-groups .team-card{width:calc(50% - 6px);flex:0 0 calc(50% - 6px)} }
 
   /* ORG CHART */
-  .orgchart-scroll{overflow-x:auto;padding:8px 0 16px}
+  .orgchart-scroll{overflow-x:auto;padding:8px 32px 16px}
   .orgchart{display:flex;justify-content:center;min-width:max-content;margin:0 auto}
   .orgchart, .orgchart ul{list-style:none}
   .orgchart ul{display:flex;padding-top:32px;position:relative}
@@ -59,17 +59,23 @@
   .orgchart li:last-child::before{border-right:1px solid var(--silver-1);border-radius:0 6px 0 0}
   .orgchart li:first-child::after{border-radius:6px 0 0 0}
   .orgchart ul ul::before{content:"";position:absolute;top:0;left:50%;border-left:1px solid var(--silver-1);width:0;height:32px}
-  .oc-box{display:inline-block;padding:12px 18px;border-radius:5px;background:var(--navy-deep);color:#fff;font-family:var(--sans);font-size:.82rem;font-weight:700;line-height:1.4;white-space:nowrap;box-shadow:0 6px 16px -6px rgba(11,46,79,.4)}
-  .oc-box small{display:block;font-weight:500;font-size:.72rem;opacity:.82;margin-top:2px}
-  .oc-box--area{background:var(--steel)}
-  .oc-stack{margin-top:32px;padding-left:18px;position:relative;text-align:left}
-  .oc-stack::before{content:"";position:absolute;left:0;top:0;bottom:16px;border-left:1px solid var(--silver-1)}
-  .oc-stack__item{position:relative;margin-bottom:14px}
+  .oc-lead{display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:inherit}
+  .oc-lead__photo{width:88px;height:88px;border-radius:50%;overflow:hidden;margin-bottom:10px;background:var(--navy-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.9rem;font-weight:500;box-shadow:0 0 0 1px var(--silver-1),0 0 0 5px var(--white),0 0 0 6px var(--silver-2)}
+  .oc-lead__photo img{width:100%;height:100%;object-fit:cover}
+  .oc-lead__name{font-family:var(--serif);font-size:1.08rem;color:var(--ink)}
+  .oc-lead__role{font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--silver-accent);margin-top:2px}
+  .oc-box--area{display:inline-block;padding:10px 18px;border-radius:5px;background:var(--steel);color:#fff;font-family:var(--sans);font-size:.8rem;font-weight:700;white-space:nowrap}
+  .oc-stack{margin-top:28px;padding-left:20px;position:relative;text-align:left}
+  .oc-stack::before{content:"";position:absolute;left:0;top:0;bottom:20px;border-left:1px solid var(--silver-1)}
+  .oc-stack__item{position:relative;margin-bottom:16px}
   .oc-stack__item:last-child{margin-bottom:0}
-  .oc-stack__item::before{content:"";position:absolute;left:-18px;top:16px;width:18px;border-top:1px solid var(--silver-1)}
-  .oc-person{display:inline-block;padding:9px 14px;border-radius:5px;background:var(--navy-deep);color:#fff;font-family:var(--sans);font-size:.76rem;font-weight:600;line-height:1.3;white-space:nowrap;transition:transform .2s var(--ease)}
-  a.oc-person:hover{transform:translateY(-2px)}
-  .oc-person small{display:block;font-weight:500;font-size:.66rem;opacity:.8;margin-top:1px}
+  .oc-stack__item::before{content:"";position:absolute;left:-20px;top:22px;width:20px;border-top:1px solid var(--silver-1)}
+  .oc-person-card{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
+  .oc-person-card__photo{width:48px;height:48px;flex:0 0 48px;border-radius:50%;overflow:hidden;background:var(--navy-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.1rem;font-weight:500;box-shadow:0 0 0 1px var(--silver-1),0 0 0 3px var(--white),0 0 0 4px var(--silver-2);transition:transform .2s var(--ease)}
+  .oc-person-card__photo img{width:100%;height:100%;object-fit:cover}
+  a.oc-person-card:hover .oc-person-card__photo{transform:translateY(-2px)}
+  .oc-person-card__name{display:block;font-family:var(--serif);font-size:.92rem;color:var(--ink);line-height:1.25}
+  .oc-person-card__role{display:block;font-size:.64rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--silver-accent);margin-top:1px}
 
   /* PARTNERSHIP NOTE (services delivered by partners, not in-house) */
   .partner-note{max-width:640px;margin:0 auto;text-align:center;background:var(--cream);border:1px solid var(--silver-2);border-radius:6px;padding:48px 44px}
@@ -164,45 +170,45 @@
       <div class="orgchart-scroll reveal">
         <ul class="orgchart">
           <li>
-            <a href="/team/cesare-trebeschi.html" class="oc-box">Cesare Trebeschi<small data-it="CEO e Fondatore" data-en="CEO and Founder">CEO e Fondatore</small></a>
+            <a href="/team/cesare-trebeschi.html" class="oc-lead"><span class="oc-lead__photo"><img src="/img/cesare-trebeschi.jpg" alt="Cesare Trebeschi"></span><span class="oc-lead__name">Cesare Trebeschi</span><span class="oc-lead__role" data-it="CEO e Fondatore" data-en="CEO and Founder">CEO e Fondatore</span></a>
             <ul>
               <li>
-                <a href="/team/mara.html" class="oc-box">Mara Carioni<small data-it="Responsabile Area Formazione" data-en="Head of Training Area">Responsabile Area Formazione</small></a>
+                <a href="/team/mara.html" class="oc-lead"><span class="oc-lead__photo"><img src="/img/team/mara.jpg" alt="Mara Carioni" style="object-position:center 16%"></span><span class="oc-lead__name">Mara Carioni</span><span class="oc-lead__role" data-it="Responsabile Area Formazione" data-en="Head of Training Area">Responsabile Area Formazione</span></a>
                 <ul>
                   <li>
-                    <div class="oc-box oc-box--area" data-it="Area Progettazione" data-en="Design Area">Area Progettazione</div>
+                    <div class="oc-box--area" data-it="Area Progettazione" data-en="Design Area">Area Progettazione</div>
                     <div class="oc-stack">
-                      <div class="oc-stack__item"><a href="/team/paola.html" class="oc-person">Paola Franzoni</a></div>
-                      <div class="oc-stack__item"><a href="/team/roberto.html" class="oc-person">Roberto James Aloi<small data-it="Senior Partner" data-en="Senior Partner">Senior Partner</small></a></div>
-                      <div class="oc-stack__item"><a href="/team/giovanni.html" class="oc-person">Giovanni Di Genio<small data-it="Senior Partner" data-en="Senior Partner">Senior Partner</small></a></div>
-                      <div class="oc-stack__item"><a href="/team/carole.html" class="oc-person">Carole Conti<small data-it="Senior Partner" data-en="Senior Partner">Senior Partner</small></a></div>
+                      <div class="oc-stack__item"><a href="/team/paola.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/paola.jpg" alt="Paola Franzoni" style="object-position:center 20%"></span><span><span class="oc-person-card__name">Paola Franzoni</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/roberto.html" class="oc-person-card"><span class="oc-person-card__photo">R</span><span><span class="oc-person-card__name">Roberto James Aloi</span><span class="oc-person-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/giovanni.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/giovanni.jpg" alt="Giovanni Di Genio" style="object-position:center 18%"></span><span><span class="oc-person-card__name">Giovanni Di Genio</span><span class="oc-person-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/carole.html" class="oc-person-card"><span class="oc-person-card__photo">C</span><span><span class="oc-person-card__name">Carole Conti</span><span class="oc-person-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</span></span></a></div>
                     </div>
                   </li>
                   <li>
-                    <div class="oc-box oc-box--area" data-it="Area Gestione" data-en="Management Area">Area Gestione</div>
+                    <div class="oc-box--area" data-it="Area Gestione" data-en="Management Area">Area Gestione</div>
                     <div class="oc-stack">
-                      <div class="oc-stack__item"><a href="/team/paola.html" class="oc-person">Paola Franzoni</a></div>
-                      <div class="oc-stack__item"><a href="/team/andrea.html" class="oc-person">Andrea Ungaro</a></div>
-                      <div class="oc-stack__item"><a href="/team/cristina.html" class="oc-person">Cristina Milanesi</a></div>
-                      <div class="oc-stack__item"><a href="/team/lavinia.html" class="oc-person">Lavinia Di Genio<small data-it="Junior Partner" data-en="Junior Partner">Junior Partner</small></a></div>
-                      <div class="oc-stack__item"><a href="/team/francesca.html" class="oc-person">Francesca Rossini<small data-it="Junior Partner" data-en="Junior Partner">Junior Partner</small></a></div>
+                      <div class="oc-stack__item"><a href="/team/paola.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/paola.jpg" alt="Paola Franzoni" style="object-position:center 20%"></span><span><span class="oc-person-card__name">Paola Franzoni</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/andrea.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/andrea.jpg" alt="Andrea Ungaro" style="object-position:center 20%"></span><span><span class="oc-person-card__name">Andrea Ungaro</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/cristina.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/cristina.jpg" alt="Cristina Milanesi" style="object-position:center 26%"></span><span><span class="oc-person-card__name">Cristina Milanesi</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/lavinia.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/lavinia.jpg" alt="Lavinia Di Genio" style="object-position:center 8%"></span><span><span class="oc-person-card__name">Lavinia Di Genio</span><span class="oc-person-card__role" data-it="Junior Partner" data-en="Junior Partner">Junior Partner</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/francesca.html" class="oc-person-card"><span class="oc-person-card__photo">F</span><span><span class="oc-person-card__name">Francesca Rossini</span><span class="oc-person-card__role" data-it="Junior Partner" data-en="Junior Partner">Junior Partner</span></span></a></div>
                     </div>
                   </li>
                   <li>
-                    <div class="oc-box oc-box--area" data-it="Area Rendicontazione" data-en="Reporting Area">Area Rendicontazione</div>
+                    <div class="oc-box--area" data-it="Area Rendicontazione" data-en="Reporting Area">Area Rendicontazione</div>
                     <div class="oc-stack">
-                      <div class="oc-stack__item"><a href="/team/mara.html" class="oc-person">Mara Carioni</a></div>
-                      <div class="oc-stack__item"><a href="/team/alessio.html" class="oc-person">Alessio Di Cesare</a></div>
-                      <div class="oc-stack__item"><a href="/team/silvia.html" class="oc-person">Silvia Ungaro<small data-it="Senior Partner" data-en="Senior Partner">Senior Partner</small></a></div>
-                      <div class="oc-stack__item"><a href="/team/gianmaria.html" class="oc-person">Gianmaria Bassani</a></div>
+                      <div class="oc-stack__item"><a href="/team/mara.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/mara.jpg" alt="Mara Carioni" style="object-position:center 16%"></span><span><span class="oc-person-card__name">Mara Carioni</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/alessio.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/alessio.jpg" alt="Alessio Di Cesare" style="object-position:center 16%"></span><span><span class="oc-person-card__name">Alessio Di Cesare</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/silvia.html" class="oc-person-card"><span class="oc-person-card__photo">S</span><span><span class="oc-person-card__name">Silvia Ungaro</span><span class="oc-person-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/gianmaria.html" class="oc-person-card"><span class="oc-person-card__photo">G</span><span><span class="oc-person-card__name">Gianmaria Bassani</span></span></a></div>
                     </div>
                   </li>
                   <li>
-                    <div class="oc-box oc-box--area" data-it="Compliance" data-en="Compliance">Compliance</div>
+                    <div class="oc-box--area" data-it="Compliance" data-en="Compliance">Compliance</div>
                     <div class="oc-stack">
-                      <!-- CLIENT NOTE: Merli Simone has no existing bio page or photo in the repo — added as a plain, non-linking box, not fabricated a profile -->
-                      <div class="oc-stack__item"><span class="oc-person">Merli Simone</span></div>
-                      <div class="oc-stack__item"><a href="/team/roberta.html" class="oc-person">Roberta Tagliani<small data-it="Senior Partner" data-en="Senior Partner">Senior Partner</small></a></div>
+                      <!-- CLIENT NOTE: Merli Simone has no existing bio page or photo in the repo — added as a plain, non-linking card, not fabricated a profile -->
+                      <div class="oc-stack__item"><span class="oc-person-card"><span class="oc-person-card__photo">M</span><span><span class="oc-person-card__name">Merli Simone</span></span></span></div>
+                      <div class="oc-stack__item"><a href="/team/roberta.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/roberta.jpg" alt="Roberta Tagliani" style="object-position:center 18%"></span><span><span class="oc-person-card__name">Roberta Tagliani</span><span class="oc-person-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</span></span></a></div>
                     </div>
                   </li>
                 </ul>
