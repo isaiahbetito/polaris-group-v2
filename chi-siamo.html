@@ -76,9 +76,14 @@
 
   /* ORG CHART */
   .orgchart-scroll{overflow-x:auto;padding:8px 32px 16px}
-  .orgchart{display:flex;justify-content:center;min-width:max-content;margin:0 auto}
+  #team .container{max-width:1760px}
+    .orgchart{display:flex;justify-content:center;width:100%;margin:0 auto}
   .orgchart, .orgchart ul{list-style:none}
   .orgchart ul{display:flex;padding-top:32px;position:relative}
+  .orgchart > li{width:100%}
+  .orgchart > li > ul{width:100%;justify-content:center}
+  .orgchart > li > ul > li{width:100%}
+  .orgchart > li > ul > li > ul{width:100%;justify-content:space-between}
   .orgchart li{position:relative;padding:32px 16px 0;display:flex;flex-direction:column;align-items:center}
   .orgchart li::before,.orgchart li::after{content:"";position:absolute;top:0;right:50%;border-top:1px solid var(--silver-1);width:50%;height:32px}
   .orgchart li::after{right:auto;left:50%;border-left:1px solid var(--silver-1)}
@@ -89,22 +94,25 @@
   .orgchart li:first-child::after{border-radius:6px 0 0 0}
   .orgchart ul ul::before{content:"";position:absolute;top:0;left:50%;border-left:1px solid var(--silver-1);width:0;height:32px}
   .oc-lead{display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:inherit}
-  .oc-lead__photo{width:88px;height:88px;border-radius:50%;overflow:hidden;margin-bottom:10px;background:var(--navy-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.9rem;font-weight:500;box-shadow:0 0 0 1px var(--silver-1),0 0 0 5px var(--white),0 0 0 6px var(--silver-2)}
+  .oc-lead__photo{width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:16px;background:var(--navy-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:3.2rem;font-weight:500;box-shadow:0 0 0 4px var(--white),0 0 0 6px var(--navy-deep)}
   .oc-lead__photo img{width:100%;height:100%;object-fit:cover}
-  .oc-lead__name{font-family:var(--serif);font-size:1.08rem;color:var(--ink)}
-  .oc-lead__role{font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--silver-accent);margin-top:2px}
+  .oc-lead__name{font-family:var(--serif);font-size:1.4rem;color:var(--ink)}
+  .oc-lead__role{font-size:.85rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--silver-accent);margin-top:4px}
+  .orgchart > li > a.oc-lead .oc-lead__photo{width:210px;height:210px;font-size:4.2rem;box-shadow:0 0 0 5px var(--white),0 0 0 7px var(--navy-deep)}
+  .orgchart > li > a.oc-lead .oc-lead__name{font-size:1.7rem}
+  .orgchart > li > a.oc-lead .oc-lead__role{font-size:.95rem}
   .oc-box--area{display:inline-block;padding:10px 18px;border-radius:5px;background:var(--steel);color:#fff;font-family:var(--sans);font-size:.8rem;font-weight:700;white-space:nowrap}
   .oc-stack{margin-top:28px;padding-left:20px;position:relative;text-align:left}
   .oc-stack::before{content:"";position:absolute;left:0;top:0;bottom:20px;border-left:1px solid var(--silver-1)}
-  .oc-stack__item{position:relative;margin-bottom:16px}
+  .oc-stack__item{position:relative;margin-bottom:36px}
   .oc-stack__item:last-child{margin-bottom:0}
-  .oc-stack__item::before{content:"";position:absolute;left:-20px;top:22px;width:20px;border-top:1px solid var(--silver-1)}
-  .oc-person-card{display:flex;align-items:center;gap:10px;text-decoration:none;color:inherit}
-  .oc-person-card__photo{width:48px;height:48px;flex:0 0 48px;border-radius:50%;overflow:hidden;background:var(--navy-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.1rem;font-weight:500;box-shadow:0 0 0 1px var(--silver-1),0 0 0 3px var(--white),0 0 0 4px var(--silver-2);transition:transform .2s var(--ease)}
+  .oc-stack__item::before{content:"";position:absolute;left:-20px;top:65px;width:20px;border-top:1px solid var(--silver-1)}
+  .oc-person-card{display:flex;align-items:center;gap:22px;text-decoration:none;color:inherit}
+  .oc-person-card__photo{width:130px;height:130px;flex:0 0 130px;border-radius:50%;overflow:hidden;background:var(--navy-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2.4rem;font-weight:500;box-shadow:0 0 0 4px var(--white),0 0 0 6px var(--navy-deep);transition:transform .2s var(--ease)}
   .oc-person-card__photo img{width:100%;height:100%;object-fit:cover}
   a.oc-person-card:hover .oc-person-card__photo{transform:translateY(-2px)}
-  .oc-person-card__name{display:block;font-family:var(--serif);font-size:.92rem;color:var(--ink);line-height:1.25}
-  .oc-person-card__role{display:block;font-size:.64rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--silver-accent);margin-top:1px}
+  .oc-person-card__name{display:block;font-family:var(--serif);font-size:1.3rem;color:var(--ink);line-height:1.25}
+  .oc-person-card__role{display:block;font-size:.82rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--silver-accent);margin-top:4px}
 </style>
 </head>
 <body>
@@ -126,7 +134,6 @@
 <main>
   <header class="page-head">
     <div class="container">
-      <span class="eyebrow eyebrow--center" data-it="Chi Siamo" data-en="About Us">Chi Siamo</span>
       <h1 data-it-html="Un riferimento solido<br><em>per ogni decisione</em>" data-en-html="A Steady Reference Point<br><em>for Every Decision</em>">Un riferimento solido<br><em>per ogni decisione</em></h1>
     </div>
   </header>
@@ -216,7 +223,7 @@
       <div class="orgchart-scroll reveal">
         <ul class="orgchart">
           <li>
-            <a href="/team/cesare-trebeschi.html" class="oc-lead"><span class="oc-lead__photo"><img src="/img/cesare-trebeschi.jpg" alt="Cesare Trebeschi"></span><span class="oc-lead__name">Cesare Trebeschi</span><span class="oc-lead__role" data-it="CEO e Fondatore" data-en="CEO and Founder">CEO e Fondatore</span></a>
+            <a href="/team/cesare-trebeschi.html" class="oc-lead"><span class="oc-lead__photo"><img src="/img/cesare-trebeschi.jpg" alt="Cesare Trebeschi" style="object-position:center 18%"></span><span class="oc-lead__name">Cesare Trebeschi</span><span class="oc-lead__role" data-it="CEO e Fondatore" data-en="CEO and Founder">CEO e Fondatore</span></a>
             <ul>
               <li>
                 <a href="/team/mara.html" class="oc-lead"><span class="oc-lead__photo"><img src="/img/team/mara.jpg" alt="Mara Carioni" style="object-position:center 16%"></span><span class="oc-lead__name">Mara Carioni</span><span class="oc-lead__role" data-it="Responsabile Area Formazione" data-en="Head of Training Area">Responsabile Area Formazione</span></a>

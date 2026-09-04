@@ -13,10 +13,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
-  /* JUMP NAV */
-  .svc-jump{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px}
-  .page-head .svc-jump .btn--ghost{color:#fff;border-color:rgba(255,255,255,.4)}
-  .page-head .svc-jump .btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+  /* STARFIELD HEAD */
+  .svc-head{overflow:hidden;min-height:66vh;display:flex;align-items:flex-end;padding:0 0 80px}
+  .svc-head__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 8%;z-index:0}
+  .svc-head__grade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(6,18,34,.4) 0%,rgba(6,18,34,.1) 35%,rgba(6,18,34,.55) 75%,rgba(6,18,34,.95) 100%)}
+  .svc-head .container{position:relative;z-index:2;text-align:center;max-width:1600px;margin:0 auto}
+  .svc-head h1{font-size:clamp(40px,5.4vw,84px);line-height:1.05;margin-top:22px;white-space:nowrap}
+  .svc-head__mark{display:block;width:220px;height:220px;margin:0 auto 24px;opacity:.9;filter:drop-shadow(0 0 24px rgba(255,255,255,.4))}
 
   /* DESCRIZIONE */
   .svc-lead{max-width:760px;margin:0 auto}
@@ -78,14 +81,14 @@
 </nav>
 
 <main>
-  <header class="page-head">
+  <header class="page-head svc-head">
+    <video class="svc-head__bg" autoplay muted loop playsinline preload="auto" poster="/hero-stars-poster.jpg" aria-hidden="true">
+      <source src="/hero-stars.mp4" type="video/mp4">
+    </video>
+    <div class="svc-head__grade" aria-hidden="true"></div>
     <div class="container">
-      <span class="eyebrow eyebrow--center" data-it="Servizi" data-en="Services">Servizi</span>
-      <h1 data-it-html="05 &mdash; <em>Asset Management e Mercati Globali</em>" data-en-html="05 &mdash; <em>Asset Management &amp; Global Markets</em>">05 — Asset Management e Mercati Globali</h1>
-      <div class="svc-jump reveal">
-        <a href="#descrizione" class="btn btn--ghost" data-it="Descrizione" data-en="Overview">Descrizione</a>
-        <a href="#partnership" class="btn btn--ghost" data-it="Partnership" data-en="Partnership">Partnership</a>
-      </div>
+      <img class="svc-head__mark" src="/img/polestar-mark.png" alt="">
+      <h1 data-it-html="05<br><em>Asset Management e Mercati Globali</em>" data-en-html="05<br><em>Asset Management &amp; Global Markets</em>">05<br><em>Asset Management e Mercati Globali</em></h1>
     </div>
   </header>
 

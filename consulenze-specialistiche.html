@@ -13,10 +13,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
-  /* JUMP NAV */
-  .svc-jump{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px}
-  .page-head .svc-jump .btn--ghost{color:#fff;border-color:rgba(255,255,255,.4)}
-  .page-head .svc-jump .btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+  /* STARFIELD HEAD */
+  .svc-head{overflow:hidden;min-height:66vh;display:flex;align-items:flex-end;padding:0 0 80px}
+  .svc-head__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 8%;z-index:0}
+  .svc-head__grade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(6,18,34,.4) 0%,rgba(6,18,34,.1) 35%,rgba(6,18,34,.55) 75%,rgba(6,18,34,.95) 100%)}
+  .svc-head .container{position:relative;z-index:2;text-align:center;max-width:1600px;margin:0 auto}
+  .svc-head h1{font-size:clamp(40px,5.4vw,84px);line-height:1.05;margin-top:22px;white-space:nowrap}
+  .svc-head__mark{display:block;width:220px;height:220px;margin:0 auto 24px;opacity:.9;filter:drop-shadow(0 0 24px rgba(255,255,255,.4))}
 
   /* DESCRIZIONE */
   .svc-lead{max-width:760px;margin:0 auto}
@@ -43,6 +46,46 @@
   .team-card__role{margin-top:2px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--silver-accent)}
   @media(max-width:860px){ .team-groups .team-grid{gap:32px 12px} .team-groups .team-card{width:calc(50% - 6px);flex:0 0 calc(50% - 6px)} }
 
+  /* ORG CHART — TEMP PREVIEW: copied from formazione.html at client's request, to preview layout with real content. Replace with the real Consulenza team before deploy. */
+  .orgchart-scroll{overflow-x:auto;padding:8px 32px 16px}
+  #team .container{max-width:1760px}
+    .orgchart{display:flex;justify-content:center;width:100%;margin:0 auto}
+  .orgchart, .orgchart ul{list-style:none}
+  .orgchart ul{display:flex;padding-top:32px;position:relative}
+  .orgchart > li{width:100%}
+  .orgchart > li > ul{width:100%;justify-content:center}
+  .orgchart > li > ul > li{width:100%}
+  .orgchart > li > ul > li > ul{width:100%;justify-content:space-between}
+  .orgchart li{position:relative;padding:32px 16px 0;display:flex;flex-direction:column;align-items:center}
+  .orgchart li::before,.orgchart li::after{content:"";position:absolute;top:0;right:50%;border-top:1px solid var(--silver-1);width:50%;height:32px}
+  .orgchart li::after{right:auto;left:50%;border-left:1px solid var(--silver-1)}
+  .orgchart li:only-child{padding-top:0}
+  .orgchart li:only-child::before,.orgchart li:only-child::after{display:none}
+  .orgchart li:first-child::before,.orgchart li:last-child::after{border:0 none}
+  .orgchart li:last-child::before{border-right:1px solid var(--silver-1);border-radius:0 6px 0 0}
+  .orgchart li:first-child::after{border-radius:6px 0 0 0}
+  .orgchart ul ul::before{content:"";position:absolute;top:0;left:50%;border-left:1px solid var(--silver-1);width:0;height:32px}
+  .oc-lead{display:flex;flex-direction:column;align-items:center;text-align:center;text-decoration:none;color:inherit}
+  .oc-lead__photo{width:160px;height:160px;border-radius:50%;overflow:hidden;margin-bottom:16px;background:var(--navy-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:3.2rem;font-weight:500;box-shadow:0 0 0 4px var(--white),0 0 0 6px var(--navy-deep)}
+  .oc-lead__photo img{width:100%;height:100%;object-fit:cover}
+  .oc-lead__name{font-family:var(--serif);font-size:1.4rem;color:var(--ink)}
+  .oc-lead__role{font-size:.85rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--silver-accent);margin-top:4px}
+  .orgchart > li > a.oc-lead .oc-lead__photo{width:210px;height:210px;font-size:4.2rem;box-shadow:0 0 0 5px var(--white),0 0 0 7px var(--navy-deep)}
+  .orgchart > li > a.oc-lead .oc-lead__name{font-size:1.7rem}
+  .orgchart > li > a.oc-lead .oc-lead__role{font-size:.95rem}
+  .oc-box--area{display:inline-block;padding:10px 18px;border-radius:5px;background:var(--steel);color:#fff;font-family:var(--sans);font-size:.8rem;font-weight:700;white-space:nowrap}
+  .oc-stack{margin-top:28px;padding-left:20px;position:relative;text-align:left}
+  .oc-stack::before{content:"";position:absolute;left:0;top:0;bottom:20px;border-left:1px solid var(--silver-1)}
+  .oc-stack__item{position:relative;margin-bottom:36px}
+  .oc-stack__item:last-child{margin-bottom:0}
+  .oc-stack__item::before{content:"";position:absolute;left:-20px;top:65px;width:20px;border-top:1px solid var(--silver-1)}
+  .oc-person-card{display:flex;align-items:center;gap:22px;text-decoration:none;color:inherit}
+  .oc-person-card__photo{width:130px;height:130px;flex:0 0 130px;border-radius:50%;overflow:hidden;background:var(--navy-deep);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2.4rem;font-weight:500;box-shadow:0 0 0 4px var(--white),0 0 0 6px var(--navy-deep);transition:transform .2s var(--ease)}
+  .oc-person-card__photo img{width:100%;height:100%;object-fit:cover}
+  a.oc-person-card:hover .oc-person-card__photo{transform:translateY(-2px)}
+  .oc-person-card__name{display:block;font-family:var(--serif);font-size:1.3rem;color:var(--ink);line-height:1.25}
+  .oc-person-card__role{display:block;font-size:.82rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--silver-accent);margin-top:4px}
+
   /* PARTNERSHIP NOTE (services delivered by partners, not in-house) */
   .partner-note{max-width:640px;margin:0 auto;text-align:center;background:var(--cream);border:1px solid var(--silver-2);border-radius:6px;padding:48px 44px}
   .partner-note__tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--silver-accent);background:var(--white);border:1px solid var(--silver-2);border-radius:999px;padding:6px 14px;margin-bottom:22px}
@@ -61,10 +104,11 @@
   @media(max-width:680px){.svc-kpi .kpi__item{border-left:0;padding:14px 20px}}
 
   /* PAYOFF */
-  .svc-payoff{max-width:720px;margin:36px auto 0;text-align:center}
-  .svc-payoff blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.4;color:#fff;margin:0}
-  .svc-payoff cite{display:block;margin-top:14px;font-style:normal;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-1)}
-  .svc-payoff p.svc-payoff__sub{margin-top:22px;font-size:1.05rem;color:var(--silver-2);line-height:1.6}
+  .svc-payoff{max-width:920px;margin:0 auto;text-align:center}
+  .svc-payoff blockquote{font-family:var(--serif);font-style:normal;font-weight:500;font-size:clamp(2rem,4.2vw,3.4rem);line-height:1.18;color:var(--navy-deep);margin:0}
+  .svc-payoff blockquote em{font-style:italic;background:linear-gradient(180deg,#3D5A75,#0B2E4F);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .svc-payoff p.svc-payoff__sub{margin-top:16px;font-size:1.02rem;color:var(--steel);line-height:1.6}
+  .svc-payoff cite{display:block;margin-top:24px;font-style:italic;font-family:var(--serif);font-weight:500;font-size:1.05rem;color:var(--steel)}
 
   /* PROVIDER GROUPS */
   .svc-provider{margin-top:44px}
@@ -73,20 +117,6 @@
   .svc-item{margin-bottom:22px}
   .svc-item:last-child{margin-bottom:0}
   .svc-item h4{font-family:var(--serif);font-size:1.15rem;color:var(--navy-deep);margin-bottom:6px}
-
-  /* CONTATTACI office card (per-service) */
-  .svc-office{display:grid;grid-template-columns:auto 1fr;gap:28px;max-width:760px;margin:0 auto;align-items:stretch}
-  .svc-office__card{background:var(--white);border:1px solid var(--silver-2);border-radius:6px;padding:34px 32px;min-width:260px}
-  .svc-office__tag{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-accent)}
-  .svc-office__city{font-family:var(--serif);font-size:1.6rem;color:var(--navy-deep);margin:8px 0 10px}
-  .svc-office__addr{font-size:.95rem;color:var(--ink);opacity:.82;line-height:1.5}
-  .svc-office__email{margin-top:18px;font-size:1.05rem}
-  .svc-office__email a{color:var(--navy-deep);font-weight:600}
-  .svc-office__email a:hover{color:var(--steel)}
-  .svc-office__link{display:inline-block;margin-top:16px;font-size:13px;font-weight:600;color:var(--navy-deep)}
-  .svc-office__map{border-radius:6px;overflow:hidden;border:1px solid var(--silver-2);min-height:220px}
-  .svc-office__map iframe{width:100%;height:100%;min-height:220px;border:0;display:block;filter:grayscale(.4) contrast(1.05)}
-  @media(max-width:680px){.svc-office{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -106,25 +136,30 @@
 </nav>
 
 <main>
-  <header class="page-head">
+  <header class="page-head svc-head">
+    <video class="svc-head__bg" autoplay muted loop playsinline preload="auto" poster="/hero-stars-poster.jpg" aria-hidden="true">
+      <source src="/hero-stars.mp4" type="video/mp4">
+    </video>
+    <div class="svc-head__grade" aria-hidden="true"></div>
     <div class="container">
-      <span class="eyebrow eyebrow--center" data-it="Servizi" data-en="Services">Servizi</span>
-      <h1 data-it-html="04 &mdash; <em>Consulenze specialistiche</em>" data-en-html="04 &mdash; <em>Specialist Advisory</em>">04 — Consulenze specialistiche</h1>
-      <figure class="svc-payoff reveal">
-        <blockquote data-it="Una cosa sola, fatta bene" data-en="One thing, done well">Una cosa sola, fatta bene</blockquote>
-        <cite>Platone, La Repubblica</cite>
-        <p class="svc-payoff__sub" data-it="Per questo ogni consulenza ha il soggetto giusto ad occuparsene" data-en="That's why every advisory need has the right entity handling it">Per questo ogni consulenza ha il soggetto giusto ad occuparsene</p>
-      </figure>
-      <div class="svc-jump reveal">
-        <a href="#descrizione" class="btn btn--ghost" data-it="Descrizione" data-en="Overview">Descrizione</a>
-        <a href="#team" class="btn btn--ghost" data-it="Team" data-en="Team">Team</a>
-        <a href="#numeri" class="btn btn--ghost" data-it="I nostri numeri" data-en="Our Numbers">I nostri numeri</a>
-      </div>
+      <img class="svc-head__mark" src="/img/polestar-mark.png" alt="">
+      <h1 data-it-html="04<br><em>Consulenze specialistiche</em>" data-en-html="04<br><em>Specialist Advisory</em>">04<br><em>Consulenze specialistiche</em></h1>
     </div>
   </header>
 
+  <!-- QUOTE -->
+  <section class="section" style="padding:56px 0 8px">
+    <div class="container">
+      <figure class="svc-payoff reveal">
+        <blockquote data-it-html="Una cosa sola, <em>fatta bene</em>" data-en-html="One thing, <em>done well</em>">Una cosa sola, <em>fatta bene</em></blockquote>
+        <p class="svc-payoff__sub" data-it="Per questo ogni consulenza ha il soggetto giusto ad occuparsene" data-en="That's why every advisory need has the right entity handling it">Per questo ogni consulenza ha il soggetto giusto ad occuparsene</p>
+        <cite>Platone, La Repubblica</cite>
+      </figure>
+    </div>
+  </section>
+
   <!-- DESCRIZIONE -->
-  <section class="section" id="descrizione">
+  <section class="section" id="descrizione" style="padding:24px 0 64px">
     <div class="container">
       <div class="svc-lead reveal">
         <p data-it="Non tutta la consulenza che offriamo rientra nei servizi di finanziamento veri e propri: c'&egrave; una parte di lavoro che accompagna l'impresa a monte e a valle delle operazioni, e che per la sua natura si divide tra chi &egrave; autorizzato a occuparsene e chi la segue sul piano operativo." data-en="Not all the advisory we offer falls within the financing services themselves: part of the work accompanies the company upstream and downstream of operations, and by its nature is split between whoever is authorized to handle it and whoever follows it operationally.">Non tutta la consulenza che offriamo rientra nei servizi di finanziamento veri e propri: c&rsquo;&egrave; una parte di lavoro che accompagna l&rsquo;impresa a monte e a valle delle operazioni, e che per la sua natura si divide tra chi &egrave; autorizzato a occuparsene e chi la segue sul piano operativo.</p>
@@ -165,51 +200,93 @@
   </section>
 
   <!-- TEAM -->
-  <section class="section section--cream" id="team">
+  <section class="section section--cream" id="team" style="padding:64px 0">
     <div class="container">
       <div class="section__head reveal">
         <h2 data-it-html="Il team <em class=&quot;hl&quot;>Consulenza</em>" data-en-html="The <em class=&quot;hl&quot;>Advisory</em> Team">Il team Consulenza</h2>
       </div>
-      <div class="partner-note reveal">
-        <span class="partner-note__tag" data-it="In corso di valutazione" data-en="Under evaluation">In corso di valutazione</span>
-        <p data-it="Il team dedicato a questo servizio &egrave; in corso di definizione." data-en="The team dedicated to this service is currently under evaluation.">Il team dedicato a questo servizio &egrave; in corso di definizione.</p>
+      <!-- TEMP PREVIEW: formazione.html's org chart, copied in at client's request just to preview the layout with real content. Swap for the real Consulenza team before deploy. -->
+      <div class="orgchart-scroll reveal">
+        <ul class="orgchart">
+          <li>
+            <a href="/team/cesare-trebeschi.html" class="oc-lead"><span class="oc-lead__photo"><img src="/img/cesare-trebeschi.jpg" alt="Cesare Trebeschi" style="object-position:center 18%"></span><span class="oc-lead__name">Cesare Trebeschi</span><span class="oc-lead__role" data-it="CEO e Fondatore" data-en="CEO and Founder">CEO e Fondatore</span></a>
+            <ul>
+              <li>
+                <a href="/team/mara.html" class="oc-lead"><span class="oc-lead__photo"><img src="/img/team/mara.jpg" alt="Mara Carioni" style="object-position:center 16%"></span><span class="oc-lead__name">Mara Carioni</span><span class="oc-lead__role" data-it="Responsabile Area Formazione" data-en="Head of Training Area">Responsabile Area Formazione</span></a>
+                <ul>
+                  <li>
+                    <div class="oc-box--area" data-it="Area Progettazione" data-en="Design Area">Area Progettazione</div>
+                    <div class="oc-stack">
+                      <div class="oc-stack__item"><a href="/team/paola.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/paola.jpg" alt="Paola Franzoni" style="object-position:center 20%"></span><span><span class="oc-person-card__name">Paola Franzoni</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/roberto.html" class="oc-person-card"><span class="oc-person-card__photo">R</span><span><span class="oc-person-card__name">Roberto James Aloi</span><span class="oc-person-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/giovanni.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/giovanni.jpg" alt="Giovanni Di Genio" style="object-position:center 18%"></span><span><span class="oc-person-card__name">Giovanni Di Genio</span><span class="oc-person-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/carole.html" class="oc-person-card"><span class="oc-person-card__photo">C</span><span><span class="oc-person-card__name">Carole Conti</span><span class="oc-person-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</span></span></a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="oc-box--area" data-it="Area Gestione" data-en="Management Area">Area Gestione</div>
+                    <div class="oc-stack">
+                      <div class="oc-stack__item"><a href="/team/paola.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/paola.jpg" alt="Paola Franzoni" style="object-position:center 20%"></span><span><span class="oc-person-card__name">Paola Franzoni</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/andrea.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/andrea.jpg" alt="Andrea Ungaro" style="object-position:center 20%"></span><span><span class="oc-person-card__name">Andrea Ungaro</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/cristina.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/cristina.jpg" alt="Cristina Milanesi" style="object-position:center 26%"></span><span><span class="oc-person-card__name">Cristina Milanesi</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/lavinia.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/lavinia.jpg" alt="Lavinia Di Genio" style="object-position:center 8%"></span><span><span class="oc-person-card__name">Lavinia Di Genio</span><span class="oc-person-card__role" data-it="Junior Partner" data-en="Junior Partner">Junior Partner</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/francesca.html" class="oc-person-card"><span class="oc-person-card__photo">F</span><span><span class="oc-person-card__name">Francesca Rossini</span><span class="oc-person-card__role" data-it="Junior Partner" data-en="Junior Partner">Junior Partner</span></span></a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="oc-box--area" data-it="Area Rendicontazione" data-en="Reporting Area">Area Rendicontazione</div>
+                    <div class="oc-stack">
+                      <div class="oc-stack__item"><a href="/team/mara.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/mara.jpg" alt="Mara Carioni" style="object-position:center 16%"></span><span><span class="oc-person-card__name">Mara Carioni</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/alessio.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/alessio.jpg" alt="Alessio Di Cesare" style="object-position:center 16%"></span><span><span class="oc-person-card__name">Alessio Di Cesare</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/silvia.html" class="oc-person-card"><span class="oc-person-card__photo">S</span><span><span class="oc-person-card__name">Silvia Ungaro</span><span class="oc-person-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</span></span></a></div>
+                      <div class="oc-stack__item"><a href="/team/gianmaria.html" class="oc-person-card"><span class="oc-person-card__photo">G</span><span><span class="oc-person-card__name">Gianmaria Bassani</span></span></a></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="oc-box--area" data-it="Compliance" data-en="Compliance">Compliance</div>
+                    <div class="oc-stack">
+                      <div class="oc-stack__item"><span class="oc-person-card"><span class="oc-person-card__photo">M</span><span><span class="oc-person-card__name">Merli Simone</span></span></span></div>
+                      <div class="oc-stack__item"><a href="/team/roberta.html" class="oc-person-card"><span class="oc-person-card__photo"><img src="/img/team/roberta.jpg" alt="Roberta Tagliani" style="object-position:center 18%"></span><span><span class="oc-person-card__name">Roberta Tagliani</span><span class="oc-person-card__role" data-it="Senior Partner" data-en="Senior Partner">Senior Partner</span></span></a></div>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
 
   <!-- NUMERI -->
-  <section class="section" id="numeri">
+  <section class="section" id="numeri" style="padding:64px 0">
     <div class="container">
       <div class="section__head reveal">
         <h2 data-it-html="I nostri <em class=&quot;hl&quot;>numeri</em>" data-en-html="Our <em class=&quot;hl&quot;>Numbers</em>">I nostri <em class="hl">numeri</em></h2>
       </div>
+      <!-- TEMP PREVIEW: formazione.html's numbers, copied in at client's request just to preview the layout with real content. Swap for the real Consulenza numbers before deploy. -->
       <div class="svc-kpi reveal">
-        <div class="kpi__item"><div class="kpi__num kpi__num--pending" data-it="In raccolta" data-en="Being collected">In raccolta</div><div class="kpi__label" data-it="Consulenze erogate" data-en="Advisory engagements delivered">Consulenze erogate</div></div>
-        <div class="kpi__item"><div class="kpi__num kpi__num--pending" data-it="In raccolta" data-en="Being collected">In raccolta</div><div class="kpi__label" data-it="Clienti seguiti" data-en="Clients supported">Clienti seguiti</div></div>
-        <div class="kpi__item"><div class="kpi__num kpi__num--pending" data-it="In raccolta" data-en="Being collected">In raccolta</div><div class="kpi__label" data-it="Valore operazioni concluse" data-en="Value of completed operations">Valore operazioni concluse</div></div>
+        <div class="kpi__item"><div class="kpi__num"><span class="count" data-target="5040">0</span></div><div class="kpi__label" data-it="Persone formate" data-en="People trained">Persone formate</div></div>
+        <div class="kpi__item"><div class="kpi__num"><span class="count" data-target="391">0</span></div><div class="kpi__label" data-it="Aziende coinvolte" data-en="Companies involved">Aziende coinvolte</div></div>
+        <div class="kpi__item"><div class="kpi__num"><span class="count" data-target="10058">0</span></div><div class="kpi__label" data-it="Ore di formazione totali" data-en="Total training hours">Ore di formazione totali</div></div>
+        <div class="kpi__item"><div class="kpi__num kpi__num--pending" data-it="In raccolta" data-en="Being collected">In raccolta</div><div class="kpi__label" data-it="Ore di formazione OFA" data-en="OFA training hours">Ore di formazione OFA</div></div>
+        <div class="kpi__item"><div class="kpi__num"><span class="count" data-target="1006">0</span></div><div class="kpi__label" data-it="Corsi erogati" data-en="Courses delivered">Corsi erogati</div></div>
       </div>
     </div>
   </section>
 
   <!-- CONTATTACI -->
-  <section class="section section--cream">
-    <div class="container reveal">
+  <section class="section section--cream" style="padding:64px 0 88px">
+    <div class="container reveal" style="text-align:center">
       <div class="section__head">
-        <h2 data-it-html="Contattaci <em class=&quot;hl&quot;>per le consulenze specialistiche</em>" data-en-html="Contact Us <em class=&quot;hl&quot;>about Specialist Advisory</em>">Contattaci <em class="hl">per le consulenze specialistiche</em></h2>
+        <h2 data-it="Contattaci" data-en="Contact Us">Contattaci</h2>
       </div>
-      <div class="svc-office">
-        <div class="svc-office__card">
-          <div class="svc-office__tag" data-it="Hazard Venture s.r.l." data-en="Hazard Venture s.r.l.">Hazard Venture s.r.l.</div>
-          <!-- CLIENT NOTE: no separate address was given for Hazard Venture in the source doc — reused the Crema office address, needs confirmation -->
-          <div class="svc-office__city">Crema</div>
-          <p class="svc-office__addr">Via del Commercio 29<br>26013 Crema (CR)</p>
-          <div class="svc-office__email"><a href="mailto:segreteria@hazardventure.eu">segreteria@hazardventure.eu</a></div>
-          <a class="svc-office__link" href="/servizi.html" data-it="Tutti i servizi →" data-en="All services →">Tutti i servizi →</a>
-        </div>
-        <div class="svc-office__map">
-          <iframe title="Mappa, Hazard Venture, Crema" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Via%20del%20Commercio%2029%2C%2026013%20Crema%20CR%20Italy&output=embed"></iframe>
-        </div>
+      <div class="git__box">
+        <span class="git__email">segreteria@hazardventure.eu</span>
+        <button class="git__copy" type="button" data-copy="segreteria@hazardventure.eu">COPY</button>
       </div>
+      <a class="git__cta" href="mailto:segreteria@hazardventure.eu" data-it-html="Apri nella tua mail &rarr;" data-en-html="Open in email app &rarr;">Apri nella tua mail &rarr;</a>
+      <div style="margin-top:22px"><a href="/servizi.html" style="font-size:13px;font-weight:600;color:var(--steel)" data-it-html="Tutti i servizi &rarr;" data-en-html="All services &rarr;">Tutti i servizi &rarr;</a></div>
     </div>
   </section>
 </main>

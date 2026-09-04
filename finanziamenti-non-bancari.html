@@ -13,10 +13,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/site.css">
 <style>
-  /* JUMP NAV */
-  .svc-jump{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px}
-  .page-head .svc-jump .btn--ghost{color:#fff;border-color:rgba(255,255,255,.4)}
-  .page-head .svc-jump .btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+  /* STARFIELD HEAD */
+  .svc-head{overflow:hidden;min-height:66vh;display:flex;align-items:flex-end;padding:0 0 80px}
+  .svc-head__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 8%;z-index:0}
+  .svc-head__grade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(6,18,34,.4) 0%,rgba(6,18,34,.1) 35%,rgba(6,18,34,.55) 75%,rgba(6,18,34,.95) 100%)}
+  .svc-head .container{position:relative;z-index:2;text-align:center;max-width:1600px;margin:0 auto}
+  .svc-head h1{font-size:clamp(40px,5.4vw,84px);line-height:1.05;margin-top:22px;white-space:nowrap}
+  .svc-head__mark{display:block;width:220px;height:220px;margin:0 auto 24px;opacity:.9;filter:drop-shadow(0 0 24px rgba(255,255,255,.4))}
 
   /* DESCRIZIONE */
   .svc-lead{max-width:760px;margin:0 auto}
@@ -62,29 +65,16 @@
   @media(max-width:680px){.svc-kpi .kpi__item{border-left:0;padding:14px 20px}}
 
   /* PAYOFF */
-  .svc-payoff{max-width:720px;margin:36px auto 0;text-align:center}
-  .svc-payoff blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.4vw,1.7rem);line-height:1.4;color:#fff;margin:0}
-  .svc-payoff cite{display:block;margin-top:14px;font-style:normal;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-1)}
-  .svc-payoff p.svc-payoff__sub{margin-top:22px;font-size:1.05rem;color:var(--silver-2);line-height:1.6}
+  .svc-payoff{max-width:920px;margin:0 auto;text-align:center}
+  .svc-payoff blockquote{font-family:var(--serif);font-style:normal;font-weight:500;font-size:clamp(2rem,4.2vw,3.4rem);line-height:1.18;color:var(--navy-deep);margin:0}
+  .svc-payoff blockquote em{font-style:italic;background:linear-gradient(180deg,#3D5A75,#0B2E4F);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .svc-payoff p.svc-payoff__sub{margin-top:16px;font-size:1.02rem;color:var(--steel);line-height:1.6}
+  .svc-payoff cite{display:block;margin-top:24px;font-style:italic;font-family:var(--serif);font-weight:500;font-size:1.05rem;color:var(--steel)}
 
   /* SUB-SERVICES */
   .svc-sub{margin-top:44px;padding-top:36px;border-top:1px solid var(--silver-2)}
   .svc-sub:first-of-type{margin-top:36px}
   .svc-sub h3{font-family:var(--serif);font-size:1.4rem;color:var(--navy-deep);margin-bottom:14px}
-
-  /* CONTATTACI office card (per-service) */
-  .svc-office{display:grid;grid-template-columns:auto 1fr;gap:28px;max-width:760px;margin:0 auto;align-items:stretch}
-  .svc-office__card{background:var(--white);border:1px solid var(--silver-2);border-radius:6px;padding:34px 32px;min-width:260px}
-  .svc-office__tag{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--silver-accent)}
-  .svc-office__city{font-family:var(--serif);font-size:1.6rem;color:var(--navy-deep);margin:8px 0 10px}
-  .svc-office__addr{font-size:.95rem;color:var(--ink);opacity:.82;line-height:1.5}
-  .svc-office__email{margin-top:18px;font-size:1.05rem}
-  .svc-office__email a{color:var(--navy-deep);font-weight:600}
-  .svc-office__email a:hover{color:var(--steel)}
-  .svc-office__link{display:inline-block;margin-top:16px;font-size:13px;font-weight:600;color:var(--navy-deep)}
-  .svc-office__map{border-radius:6px;overflow:hidden;border:1px solid var(--silver-2);min-height:220px}
-  .svc-office__map iframe{width:100%;height:100%;min-height:220px;border:0;display:block;filter:grayscale(.4) contrast(1.05)}
-  @media(max-width:680px){.svc-office{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -104,25 +94,30 @@
 </nav>
 
 <main>
-  <header class="page-head">
+  <header class="page-head svc-head">
+    <video class="svc-head__bg" autoplay muted loop playsinline preload="auto" poster="/hero-stars-poster.jpg" aria-hidden="true">
+      <source src="/hero-stars.mp4" type="video/mp4">
+    </video>
+    <div class="svc-head__grade" aria-hidden="true"></div>
     <div class="container">
-      <span class="eyebrow eyebrow--center" data-it="Servizi" data-en="Services">Servizi</span>
-      <h1 data-it-html="03 &mdash; <em>Finanziamenti non bancari</em>" data-en-html="03 &mdash; <em>Non-Bank Financing</em>">03 — Finanziamenti non bancari</h1>
-      <figure class="svc-payoff reveal">
-        <blockquote data-it="Mille strade portano a Roma" data-en="A thousand roads lead to Rome">Mille strade portano a Roma</blockquote>
-        <cite>Alain de Lille, Liber Parabolarum</cite>
-        <p class="svc-payoff__sub" data-it="Il credito bancario non &egrave; l'unica via: invoice trading, supply chain, minibond, programmi di investimento" data-en="Bank credit isn't the only path: invoice trading, supply chain finance, minibonds, investment programs">Il credito bancario non &egrave; l&rsquo;unica via: invoice trading, supply chain, minibond, programmi di investimento</p>
-      </figure>
-      <div class="svc-jump reveal">
-        <a href="#descrizione" class="btn btn--ghost" data-it="Descrizione" data-en="Overview">Descrizione</a>
-        <a href="#team" class="btn btn--ghost" data-it="Team" data-en="Team">Team</a>
-        <a href="#numeri" class="btn btn--ghost" data-it="I nostri numeri" data-en="Our Numbers">I nostri numeri</a>
-      </div>
+      <img class="svc-head__mark" src="/img/polestar-mark.png" alt="">
+      <h1 data-it-html="03<br><em>Finanziamenti non bancari</em>" data-en-html="03<br><em>Non-Bank Financing</em>">03<br><em>Finanziamenti non bancari</em></h1>
     </div>
   </header>
 
+  <!-- QUOTE -->
+  <section class="section" style="padding:56px 0 8px">
+    <div class="container">
+      <figure class="svc-payoff reveal">
+        <blockquote data-it-html="Mille strade <em>portano a Roma</em>" data-en-html="A thousand roads <em>lead to Rome</em>">Mille strade <em>portano a Roma</em></blockquote>
+        <p class="svc-payoff__sub" data-it="Il credito bancario non &egrave; l'unica via: invoice trading, supply chain, minibond, programmi di investimento" data-en="Bank credit isn't the only path: invoice trading, supply chain finance, minibonds, investment programs">Il credito bancario non &egrave; l&rsquo;unica via: invoice trading, supply chain, minibond, programmi di investimento</p>
+        <cite>Alain de Lille, Liber Parabolarum</cite>
+      </figure>
+    </div>
+  </section>
+
   <!-- DESCRIZIONE -->
-  <section class="section" id="descrizione">
+  <section class="section" id="descrizione" style="padding:24px 0 64px">
     <div class="container">
       <div class="svc-lead reveal">
         <p data-it="Affianchiamo le imprese nella diversificazione delle fonti di liquidit&agrave; andando oltre il canale bancario tradizionale, con strumenti che non impattano sulla Centrale Rischi e non consumano gli affidamenti concessi dagli istituti di credito. Questa classe di servizi &egrave; erogata da Hazard Venture s.r.l." data-en="We support companies in diversifying their sources of liquidity, going beyond the traditional banking channel, with tools that don't affect the Centrale Rischi credit registry and don't use up the credit lines granted by banks. This class of services is provided by Hazard Venture s.r.l.">Affianchiamo le imprese nella diversificazione delle fonti di liquidit&agrave; andando oltre il canale bancario tradizionale, con strumenti che non impattano sulla Centrale Rischi e non consumano gli affidamenti concessi dagli istituti di credito. Questa classe di servizi &egrave; erogata da Hazard Venture s.r.l.</p>
@@ -157,7 +152,7 @@
   </section>
 
   <!-- TEAM -->
-  <section class="section section--cream" id="team">
+  <section class="section section--cream" id="team" style="padding:64px 0">
     <div class="container">
       <div class="section__head reveal">
         <h2 data-it-html="Il team <em class=&quot;hl&quot;>Finanziamenti</em>" data-en-html="The <em class=&quot;hl&quot;>Financing</em> Team">Il team Finanziamenti</h2>
@@ -170,7 +165,7 @@
   </section>
 
   <!-- NUMERI -->
-  <section class="section" id="numeri">
+  <section class="section" id="numeri" style="padding:64px 0">
     <div class="container">
       <div class="section__head reveal">
         <h2 data-it-html="I nostri <em class=&quot;hl&quot;>numeri</em>" data-en-html="Our <em class=&quot;hl&quot;>Numbers</em>">I nostri <em class="hl">numeri</em></h2>
@@ -183,24 +178,17 @@
   </section>
 
   <!-- CONTATTACI -->
-  <section class="section section--cream">
-    <div class="container reveal">
+  <section class="section section--cream" style="padding:64px 0 88px">
+    <div class="container reveal" style="text-align:center">
       <div class="section__head">
-        <h2 data-it-html="Contattaci <em class=&quot;hl&quot;>per i finanziamenti non bancari</em>" data-en-html="Contact Us <em class=&quot;hl&quot;>about Non-Bank Financing</em>">Contattaci <em class="hl">per i finanziamenti non bancari</em></h2>
+        <h2 data-it="Contattaci" data-en="Contact Us">Contattaci</h2>
       </div>
-      <div class="svc-office">
-        <div class="svc-office__card">
-          <div class="svc-office__tag" data-it="Hazard Venture s.r.l." data-en="Hazard Venture s.r.l.">Hazard Venture s.r.l.</div>
-          <!-- CLIENT NOTE: no separate address was given for Hazard Venture in the source doc — reused the Crema office address, needs confirmation -->
-          <div class="svc-office__city">Crema</div>
-          <p class="svc-office__addr">Via del Commercio 29<br>26013 Crema (CR)</p>
-          <div class="svc-office__email"><a href="mailto:segreteria@hazardventure.eu">segreteria@hazardventure.eu</a></div>
-          <a class="svc-office__link" href="/servizi.html" data-it="Tutti i servizi →" data-en="All services →">Tutti i servizi →</a>
-        </div>
-        <div class="svc-office__map">
-          <iframe title="Mappa, Hazard Venture, Crema" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Via%20del%20Commercio%2029%2C%2026013%20Crema%20CR%20Italy&output=embed"></iframe>
-        </div>
+      <div class="git__box">
+        <span class="git__email">segreteria@hazardventure.eu</span>
+        <button class="git__copy" type="button" data-copy="segreteria@hazardventure.eu">COPY</button>
       </div>
+      <a class="git__cta" href="mailto:segreteria@hazardventure.eu" data-it-html="Apri nella tua mail &rarr;" data-en-html="Open in email app &rarr;">Apri nella tua mail &rarr;</a>
+      <div style="margin-top:22px"><a href="/servizi.html" style="font-size:13px;font-weight:600;color:var(--steel)" data-it-html="Tutti i servizi &rarr;" data-en-html="All services &rarr;">Tutti i servizi &rarr;</a></div>
     </div>
   </section>
 </main>
