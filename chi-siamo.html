@@ -40,15 +40,29 @@
   .method-note h2 em{font-weight:600;font-style:italic;color:var(--silver-1)}
 
   /* IL GRUPPO */
+  #gruppo .container{max-width:1760px}
   .grp-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin:var(--sp-8) auto 0}
-  .grp-card{background:rgba(255,255,255,.05);border:1px solid rgba(184,194,204,.22);border-radius:6px;padding:28px 22px;backdrop-filter:blur(4px);transition:transform .3s var(--ease),border-color .3s var(--ease)}
-  .grp-card:hover{transform:translateY(-5px);border-color:rgba(184,194,204,.5)}
-  .grp-card__tag{display:block;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:14px}
+  .grp-card{display:flex;flex-direction:column;background:var(--white);border:1px solid var(--silver-2);border-radius:8px;padding:38px 30px;box-shadow:0 20px 45px -32px rgba(0,0,0,.35);text-decoration:none;transition:transform .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease)}
+  .grp-card:hover{transform:translateY(-6px);border-color:var(--silver-1);box-shadow:0 28px 60px -26px rgba(0,0,0,.4)}
+  .grp-card__tag{display:block;font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--silver-accent);margin-bottom:16px}
   .grp-card--partner{border-style:dashed}
-  .grp-card--partner .grp-card__tag{color:#9fb8d4}
-  .grp-card__t{font-family:var(--serif);font-size:1.5rem;color:#fff;margin-bottom:10px}
-  .grp-card__b{font-size:.95rem;line-height:1.55;color:var(--silver-2);opacity:.92}
-  .grp-card__meta{margin-top:20px;padding-top:18px;border-top:1px solid rgba(184,194,204,.18);font-size:.8rem;color:var(--silver-accent);font-style:italic}
+  .grp-card--partner .grp-card__tag{color:var(--steel)}
+  .grp-card__t{font-family:var(--serif);font-size:1.6rem;color:var(--navy-deep);margin-bottom:12px;line-height:1.2}
+  .grp-card__b{font-size:.95rem;line-height:1.62;color:var(--steel);flex:1 0 auto}
+  .grp-card__meta{margin-top:24px;padding-top:20px;border-top:1px solid var(--silver-2)}
+  .grp-card__meta-label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy-deep)}
+  .grp-card__meta-detail{display:block;margin-top:5px;font-size:.82rem;font-style:italic;color:var(--steel)}
+  .grp-card__link{display:inline-block;margin-top:20px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--navy-mid);transition:color .25s var(--ease)}
+  .grp-card:hover .grp-card__link{color:var(--navy-deep)}
+  .grp-card--spinoff{background:linear-gradient(160deg,#1a3a6b,#0d2547);border-color:rgba(156,192,239,.55)}
+  .grp-card--spinoff .grp-card__tag{color:#cfe0f5}
+  .grp-card--spinoff .grp-card__t{color:#fff}
+  .grp-card--spinoff .grp-card__b{color:var(--silver-2)}
+  .grp-card--spinoff .grp-card__meta{border-top-color:rgba(255,255,255,.25)}
+  .grp-card--spinoff .grp-card__meta-label{color:#fff}
+  .grp-card--spinoff .grp-card__link{color:#9cc0ef}
+  .grp-card--spinoff:hover .grp-card__link{color:#fff}
+  .grp-card__badge{display:inline-block;margin-top:8px;padding:4px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.45);font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff}
   @media(max-width:1080px){.grp-grid{grid-template-columns:repeat(3,1fr)}}
   @media(max-width:680px){.grp-grid{grid-template-columns:1fr}}
 
@@ -160,10 +174,9 @@
   </section>
 
   <!-- IL GRUPPO -->
-  <section class="section section--navy">
+  <section class="section section--navy" id="gruppo">
     <div class="container">
       <div class="method-note reveal">
-        <span class="eyebrow eyebrow--center" data-it="Il Gruppo" data-en="The Group">Il Gruppo</span>
         <h2 data-it-html="Cinque realt&agrave;<br><em>un solo coordinamento</em>" data-en-html="Five Entities<br><em>One Coordinated Group</em>">Cinque realt&agrave;<br><em>un solo coordinamento</em></h2>
         <p class="lead" style="color:var(--silver-2);margin-top:20px" data-it="Il gruppo si avvale delle competenze di cinque realt&agrave; che lavorano in efficace coordinamento:" data-en="The group draws on the expertise of five entities working in effective coordination:">Il gruppo si avvale delle competenze di cinque realt&agrave; che lavorano in efficace coordinamento:</p>
       </div>
@@ -172,31 +185,50 @@
           <span class="grp-card__tag" data-it="Gruppo" data-en="Group">Gruppo</span>
           <h3 class="grp-card__t">Polaris HR srl</h3>
           <p class="grp-card__b" data-it="Si dedica alla formazione, anche finanziata dai fondi interprofessionali, a favore del personale delle imprese." data-en="Dedicated to training, including funded through interprofessional funds, for company staff.">Si dedica alla formazione, anche finanziata dai fondi interprofessionali, a favore del personale delle imprese.</p>
-          <div class="grp-card__meta">P.IVA 01616620199 &middot; Crema, Italia</div>
+          <div class="grp-card__meta">
+            <span class="grp-card__meta-label" data-it="Crema, Italia" data-en="Crema, Italy">Crema, Italia</span>
+            <span class="grp-card__meta-detail">P.IVA 01616620199</span>
+          </div>
+          <span class="grp-card__link" data-it-html="Scopri di pi&ugrave; &rarr;" data-en-html="Learn more &rarr;">Scopri di pi&ugrave; &rarr;</span>
         </a>
         <a class="grp-card" href="/finanziamenti-bancari.html">
           <span class="grp-card__tag" data-it="Gruppo" data-en="Group">Gruppo</span>
           <h3 class="grp-card__t">Polaris</h3>
           <p class="grp-card__b" data-it="Intermediario del credito e soggetto vigilato OAM, affianca le imprese nell'accesso al credito bancario e le assiste con consulenza di alta specializzazione finanziaria." data-en="Credit intermediary and OAM-supervised entity, supporting companies in accessing bank credit and assisting them with highly specialized financial advisory.">Intermediario del credito e soggetto vigilato OAM, affianca le imprese nell&rsquo;accesso al credito bancario e le assiste con consulenza di alta specializzazione finanziaria.</p>
-          <div class="grp-card__meta" data-it="Intermediario del credito &middot; Vigilato OAM" data-en="Credit intermediary &middot; OAM-supervised">Intermediario del credito &middot; Vigilato OAM</div>
+          <div class="grp-card__meta">
+            <span class="grp-card__meta-label" data-it="Intermediario del credito" data-en="Credit intermediary">Intermediario del credito</span>
+            <span class="grp-card__meta-detail" data-it="Vigilato OAM" data-en="OAM-supervised">Vigilato OAM</span>
+          </div>
+          <span class="grp-card__link" data-it-html="Scopri di pi&ugrave; &rarr;" data-en-html="Learn more &rarr;">Scopri di pi&ugrave; &rarr;</span>
         </a>
         <a class="grp-card" href="/finanziamenti-non-bancari.html">
           <span class="grp-card__tag" data-it="Gruppo" data-en="Group">Gruppo</span>
           <h3 class="grp-card__t">Hazard Venture</h3>
           <p class="grp-card__b" data-it="Offre alle imprese supporto per gli strumenti di finanza alternativa al canale bancario." data-en="Offers companies support with alternative finance instruments beyond the banking channel.">Offre alle imprese supporto per gli strumenti di finanza alternativa al canale bancario.</p>
-          <div class="grp-card__meta" data-it="Societ&agrave; del Gruppo" data-en="Group company">Societ&agrave; del Gruppo</div>
+          <div class="grp-card__meta">
+            <span class="grp-card__meta-label" data-it="Societ&agrave; del Gruppo" data-en="Group company">Societ&agrave; del Gruppo</span>
+          </div>
+          <span class="grp-card__link" data-it-html="Scopri di pi&ugrave; &rarr;" data-en-html="Learn more &rarr;">Scopri di pi&ugrave; &rarr;</span>
         </a>
         <a class="grp-card grp-card--partner" href="https://runcapital.partners" target="_blank" rel="noopener">
           <span class="grp-card__tag" data-it="Partner" data-en="Partner">Partner</span>
           <h3 class="grp-card__t">Run Capital Partners</h3>
           <p class="grp-card__b" data-it="Consulenza patrimoniale, distribuzione di Fondi, Asset Management e Mercati Globali." data-en="Wealth advisory, fund distribution, Asset Management and Global Markets.">Consulenza patrimoniale, distribuzione di Fondi, Asset Management e Mercati Globali.</p>
-          <div class="grp-card__meta" data-it="Lussemburgo &middot; Partnership strategica" data-en="Luxembourg &middot; Strategic partnership">Lussemburgo &middot; Partnership strategica</div>
+          <div class="grp-card__meta">
+            <span class="grp-card__meta-label" data-it="Lussemburgo" data-en="Luxembourg">Lussemburgo</span>
+            <span class="grp-card__meta-detail" data-it="Partnership strategica" data-en="Strategic partnership">Partnership strategica</span>
+          </div>
+          <span class="grp-card__link" data-it-html="Scopri di pi&ugrave; &rarr;" data-en-html="Learn more &rarr;">Scopri di pi&ugrave; &rarr;</span>
         </a>
-        <a class="grp-card grp-card--partner" href="https://3dots.com" target="_blank" rel="noopener">
+        <a class="grp-card grp-card--partner grp-card--spinoff" href="https://3dots.com" target="_blank" rel="noopener">
           <span class="grp-card__tag" data-it="Partner" data-en="Partner">Partner</span>
           <h3 class="grp-card__t">3Dots Capital</h3>
           <p class="grp-card__b" data-it="Affianca le imprese per arrivare alla quotazione al Nasdaq, il mercato borsistico statunitense." data-en="Supports companies on the path to a Nasdaq listing, the U.S. stock exchange.">Affianca le imprese per arrivare alla quotazione al Nasdaq, il mercato borsistico statunitense.</p>
-          <div class="grp-card__meta" data-it="New York &middot; Spin Off" data-en="New York &middot; Spin off">New York &middot; Spin Off</div>
+          <div class="grp-card__meta">
+            <span class="grp-card__meta-label" data-it="New York" data-en="New York">New York</span>
+            <span class="grp-card__badge" data-it="Spin Off" data-en="Spin off">Spin Off</span>
+          </div>
+          <span class="grp-card__link" data-it-html="Scopri di pi&ugrave; &rarr;" data-en-html="Learn more &rarr;">Scopri di pi&ugrave; &rarr;</span>
         </a>
       </div>
     </div>
